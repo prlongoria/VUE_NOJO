@@ -15,6 +15,8 @@ export default {
 <style lang="css" scoped>
     .createView{
         background-color: blueviolet;
+        height: 100vh;
+        overflow-y: auto;
     }
 
 </style>

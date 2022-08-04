@@ -16,7 +16,9 @@ export default {
         <div class="title">
             <h1 id="WikiTitle">WIKISTONE</h1>
         </div>
+
         <SearchBarVue></SearchBarVue>
+        
         <div class="menuNav">
             <nav>
                 <button onclick="alert('Teléfono 654951123, correo@mail.com');">Contacto</button>

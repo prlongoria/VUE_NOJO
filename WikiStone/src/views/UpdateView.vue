@@ -7,14 +7,16 @@
 </script>
 
 <template>
-    <div class="updateView">
+    <main class="updateView">
         <h1>SOY LA UPDATE VIEW</h1>
-    </div>
+    </main>
 </template>
 
-<style lang="css" scoped>
+<style c>
     .updateView{
         background-color: blueviolet;
+        height: 100vh;
+        overflow-y: auto;
     }
 
 </style>
