@@ -18,6 +18,9 @@ import Footer from "./components/my_components/footer/Footer.vue"
 </template>
 
 <style lang="css" >
+:root {
+  --primary-color:#849597;
+}
 #app {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;

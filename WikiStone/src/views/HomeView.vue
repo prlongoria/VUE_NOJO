@@ -2,10 +2,13 @@
 
 <script setup>
   import SideBarVue from '../components/my_components/SideBar.vue';
+import HomeIntroduction from '../components/my_components/HomeIntroduction.vue';
 </script>
 
 <template>
 
+  <HomeIntroduction></HomeIntroduction>
+  
   <main class="homeview">
     <h1 >Home Page</h1>
     <nav>
@@ -15,22 +18,21 @@
       <br>
       <RouterLink to="/Update">Update View</RouterLink>
     </nav>
-    <div class="sideBar">
+    
       <SideBarVue></SideBarVue>
-    </div>
+    
   </main>
   <RouterView name="aside"/>
 </template>
 
 <style lang="css" scoped>
-.sideBar {
-  background-color: rebeccapurple;
-  display:;
-}
 .homeview {
-  background-color: brown;
+  background-color: lightblue;
   height: 100vh;
   overflow-y: auto;
+  display: flex;
+  justify-content: flex-end;
+  
 }
 /* .content {
   display: flex;
