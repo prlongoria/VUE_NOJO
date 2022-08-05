@@ -39,6 +39,7 @@ export default {
   width: 12vw;
   font-size: 2vw;
   background-color: var(--primary-color);
+  margin: 1vw;
 }
 .sidebar-header {
   display: flex;
