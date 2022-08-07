@@ -1,21 +1,29 @@
 
-<script>
+<script setup>
+import BackButton from "../components/my_components/detailComponents/backButton.vue";
+import DetailComponent from "../components/my_components/detailComponents/detailComponent.vue";
 
 </script>
 
 <template>
-    <div class="detailView">
+<DetailComponent></DetailComponent>
+    <!-- <div class="detailView">
         <h1>ESTA ES LA DETAIL VIEW</h1>
-    </div>
+    </div> -->
+    <BackButton></BackButton>
 </template>
 
 
 <style lang="css" scoped>
-    .detailView{
-        background-color: blueviolet;
+    /* .detailView{
+        background-color: #EBF1F4;
         height: 100vh;
         overflow-y: auto;
-}
+        padding: 3vw;
+        margin: 2vw;
+        
+        
+} */
 /* .content {
   display: flex;
   justify-content: center;

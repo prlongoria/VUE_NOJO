@@ -9,6 +9,16 @@ export default {
 <template>
 
   <div id="sidebar">
+
+<h1 >Home Page</h1>
+        <nav>
+        <RouterLink to="/CreateView">CreateView</RouterLink>
+        <br>
+        <RouterLink to="/DetailView">DetailView</RouterLink>
+        <br>
+        <RouterLink to="/Update">Update View</RouterLink>
+        </nav> 
+
     <div class="sidebar-header">
       <span>UserName</span>
     </div>

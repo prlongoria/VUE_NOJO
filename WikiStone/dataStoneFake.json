@@ -1,0 +1,75 @@
+{
+
+    "0":
+    {
+        "name":"Kunzita",
+        "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos y comunicación. Irradia paz y te conecta con el amor universal. Introduce un estado de meditación profundo y centrado",
+        "healing":"Fortalece el sistema circulatorio y el músculo corazón. Ayuda en dolencias que afectan a los nervios corporales, como la neuralgia. Calma la epilepsia y alivia dolor de articulaciones. Neutraliza los efectos de la anestesia y estimula el sistema inmunitario",
+        "position":"Sostén o sitúa donde sea apropiado, o úsala como elixir. Llévala puesta como pendiente o adósala al teléfono móvil u ordenador. Sostén una kunzita o ponla sobre plexo solar para aliviar el pánico.",
+        "color":"Rosa, amarillo, verde, lila, claro",
+        "image":"https://azabacheminerales.com/wp-content/uploads/kuncita-1.jpg",
+        "id":0
+
+    },
+    "1":
+    {
+        "name":"Ágata",
+        "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos y comunicación",
+        "healing":"Fortalece el sistema circulatorio y el músculo corazón. Ayuda en dolencias que afectan a los nervios corporales, como la neuralgia. Calma la epilepsia y alivia dolor de articulaciones.",
+        "position":"Sostén o sitúa donde sea apropiado, o úsala como elixir. Llévala puesta como pendiente o adósala al teléfono móvil u ordenador.",
+        "color":"Rosa, amarillo, verde, lila",
+        "image":"https://2.bp.blogspot.com/-loIDJ5Ofs1g/Ua4l_zM6mNI/AAAAAAAAAgI/QZQNaJIROFM/s1600/%C3%81gata.JPG",
+        "id":1
+    },
+    "2":
+    {
+        "name":"Turquesa",
+        "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos",
+        "healing":"Fortalece el sistema circulatorio y el músculo corazón. Ayuda en dolencias que afectan a los nervios corporales, como la neuralgia. Calma la epilepsia y alivia dolor de articulaciones. Neutraliza los efectos de la anestesia...",
+        "position":"Sostén o sitúa donde sea apropiado, o úsala como elixir. Llévala puesta como pendiente o adósala al teléfono móvil u ordenador. Sostén una kunzita o ponla sobre plexo solar para aliviar el pánico....",
+        "color":"Rosa, amarillo, verde",
+        "image":"https://http2.mlstatic.com/piedra-turquesa-grande-en-bruto-cuarzo-379-grs-D_NQ_NP_899010-MLM25900316190_082017-F.jpg",
+        "id":2
+    },
+    "3":
+    {
+        "name":"Turmalina",
+        "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional",
+        "healing":"Fortalece el sistema circulatorio y el músculo corazón. Ayuda en dolencias que afectan a los nervios corporales, como la neuralgia. Calma la epilepsia y alivia dolor de articulaciones. Neutraliza los efectos",
+        "position":" Llévala puesta como pendiente o adósala al teléfono móvil u ordenador. Sostén una kunzita o ponla sobre plexo solar para aliviar el pánico.",
+        "color":"Rosa, amarillo, verde, lila, claro...",
+        "image":"https://mineralesweb.com/wp-content/uploads/2020/04/turmalina-2.jpg",
+        "id":3
+    },
+    "4":
+    {
+        "name":"Turmalina Rosa",
+        "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos y comunicación...",
+        "healing":"Fortalece el sistema circulatorio y el músculo corazón. Neutraliza los efectos de la anestesia y estimula el sistema inmunitario",
+        "position":"Sostén o sitúa donde sea apropiado, o úsala como elixir. Sostén una kunzita o ponla sobre plexo solar para aliviar el pánico.",
+        "color":"Verde, lila, claro",
+        "image":"https://www.cuarzosymaestros.com/wp-content/uploads/2020/04/turmalina-rosa-1-960x675.jpg",
+        "id":4
+    },
+    "5":
+    {
+        "name":"Cuarzo",
+        "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional...",
+        "healing":"Ayuda en dolencias que afectan a los nervios corporales, como la neuralgia. Calma la epilepsia y alivia dolor de articulaciones. Neutraliza los efectos de la anestesia y estimula el sistema inmunitario",
+        "position":"Sostén o sitúa donde sea apropiado, o úsala como elixir...",
+        "color":"Rosa, verde, lila, claro",
+        "image":"https://mineralesyrocas.com/wp-content/uploads/cuarzo.jpg",
+        "id":5
+    },
+
+    "6":
+    {
+        "name":"Cuarzo Ahumado",
+        "attributes":"Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos y comunicación",
+        "healing":"Fortalece el sistema circulatorio y el músculo corazón. Neutraliza los efectos de la anestesia y estimula el sistema inmunitario",
+        "position":"Sostén donde sea apropiado, o úsala como elixir. Llévala puesta como pendiente o adósala al teléfono móvil u ordenador. Sostén una kunzita o ponla sobre plexo solar para aliviar el pánico.",
+        "color":"Rosa, amarillo, claro.",
+        "image":"https://2.bp.blogspot.com/-s-r4WBu3EsM/U4X9SSceo0I/AAAAAAAAa1g/a6G5rxCyGwg/s1600/Cuarzo+ahumado+1.jpg",
+        "id":6
+    }
+}
