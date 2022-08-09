@@ -1,21 +1,44 @@
 
 <script>
-export default {
 
+export default {
+    data () {
+        return {
+            message: 'HELLO',
+            stones: 1,
+            stonesData: null
+        }
+    },
+    methods: {
+        async fetchData () {
+            this.stonesData = null
+            const res = await fetch(`../../../dataStoneFake.json/${this.stonesId}`)
+            this.stonesData = await res.json()
+        }
+    },
+    mounted() {
+        this.fetchData()
+    },
+    watch: {
+        stonesId() {
+            this.fetchData()
+        }
+    }
 }
+   
 </script>
 
 <template>
-    <div class="panelCatalogCards">
-        <div class="threeCards">
+    <div class="panelCatalogCards" >
+        <div class="threeCards"> 
             <div class="card">
                 <div class="imgTitleColor">
                     <div class="card__image-holder">
-                        <img class="card__image" src="../../../images/Cuarzo_rosa.jpg" alt="stone" />
+                        <img class="card__image" src="../../../images/kuncita-1.jpg"  alt="stone" />
                     </div>
                     <div id="titleColor">
                         <div class="card-title">
-                            <h2>Cuarzo Rosa</h2>
+                            <h2>{{message}}</h2>
                         </div>
                         <div class="card-color">
                             <h2>Color: rosa</h2>

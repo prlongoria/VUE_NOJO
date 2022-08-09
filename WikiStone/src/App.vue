@@ -3,17 +3,14 @@ import { RouterView } from "vue-router";
 import Header from "./components/my_components/header/Header.vue"
 import Footer from "./components/my_components/footer/Footer.vue"
 
-
 </script>
 
 
 <template>
-
   <Header></Header>
-  <!-- <SideBar></SideBar> -->
+  
   <Footer></Footer>
 
-  <!-- <RouterView name="aside"/> -->
   <!-- <RouterView />  -->
 </template>
 

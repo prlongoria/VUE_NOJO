@@ -5,6 +5,8 @@
 import HomeIntroduction from '../components/my_components/HomeIntroduction.vue';
 import CardsCatalog from '../components/my_components/cardsCatalog/CardsCatalog.vue';
 import AddStoneButton from '../components/my_components/addStoneButton.vue';
+import { useStonesStore } from "../stores/StonesStore.js";
+useStonesStore ();
 </script>
 
 <template>
@@ -13,17 +15,13 @@ import AddStoneButton from '../components/my_components/addStoneButton.vue';
    
   
   <main class="homeview">
-    
-  <!-- <div id="catalog"> -->
-     
     <CardsCatalog></CardsCatalog>
-    <!-- </div> -->
     
-      <SideBarVue></SideBarVue>
+    <SideBarVue></SideBarVue>
     
   </main>
   <AddStoneButton></AddStoneButton>
-  <!-- <RouterView name="aside"/> -->
+
 </template>
 
 <style lang="css" scoped>

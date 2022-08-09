@@ -1,6 +1,7 @@
 {
+    "stones": [
 
-    "0":
+    
     {
         "name":"Kunzita",
         "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos y comunicación. Irradia paz y te conecta con el amor universal. Introduce un estado de meditación profundo y centrado",
@@ -11,7 +12,7 @@
         "id":0
 
     },
-    "1":
+    
     {
         "name":"Ágata",
         "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos y comunicación",
@@ -21,7 +22,7 @@
         "image":"https://2.bp.blogspot.com/-loIDJ5Ofs1g/Ua4l_zM6mNI/AAAAAAAAAgI/QZQNaJIROFM/s1600/%C3%81gata.JPG",
         "id":1
     },
-    "2":
+    
     {
         "name":"Turquesa",
         "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos",
@@ -31,7 +32,7 @@
         "image":"https://http2.mlstatic.com/piedra-turquesa-grande-en-bruto-cuarzo-379-grs-D_NQ_NP_899010-MLM25900316190_082017-F.jpg",
         "id":2
     },
-    "3":
+    
     {
         "name":"Turmalina",
         "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional",
@@ -41,7 +42,7 @@
         "image":"https://mineralesweb.com/wp-content/uploads/2020/04/turmalina-2.jpg",
         "id":3
     },
-    "4":
+    
     {
         "name":"Turmalina Rosa",
         "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos y comunicación...",
@@ -51,7 +52,7 @@
         "image":"https://www.cuarzosymaestros.com/wp-content/uploads/2020/04/turmalina-rosa-1-960x675.jpg",
         "id":4
     },
-    "5":
+    
     {
         "name":"Cuarzo",
         "attributes":"Extremadamente espiritual con vibración elevada. Despierta el centro corazón y el amor incondicional...",
@@ -62,7 +63,7 @@
         "id":5
     },
 
-    "6":
+    
     {
         "name":"Cuarzo Ahumado",
         "attributes":"Despierta el centro corazón y el amor incondicional, produciendo pensamientos amorosos y comunicación",
@@ -72,4 +73,5 @@
         "image":"https://2.bp.blogspot.com/-s-r4WBu3EsM/U4X9SSceo0I/AAAAAAAAa1g/a6G5rxCyGwg/s1600/Cuarzo+ahumado+1.jpg",
         "id":6
     }
+]
 }

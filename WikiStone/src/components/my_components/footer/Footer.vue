@@ -1,13 +1,20 @@
 <script>
 export default {
-
+    data() {
+        return {
+            paginaDondeEstoy: 'Página de Inicio',
+        }
+    },
+    // mounted() {
+    //     this.$refs.h4.textContent = 'Detalle Mineral'
+    // }
 }
 </script>
 
 
 <template>
     <footer class="footer">
-        <h4>Página de Inicio</h4>
+        <h4 ref="h4">{{paginaDondeEstoy}}</h4>
         <button onclick="alert('La Biblia de los Cristales de Judy Hall');" id="footerButton">Fuentes de Información</button>
                 
     </footer>  
