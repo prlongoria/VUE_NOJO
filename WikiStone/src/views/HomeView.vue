@@ -19,7 +19,7 @@
 
     <!-- <CardsCatalogue /> -->
     
-         <CardsCatalog  /> 
+         <CardsCatalog /> 
       
 
 

@@ -1,46 +1,33 @@
-
-
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <template>
-
   <div id="sidebar">
-
-<h1 >Home Page</h1>
-        <nav>
-        <RouterLink to="/CreateView">CreateView</RouterLink>
-        <br>
-        <RouterLink to="/DetailView">DetailView</RouterLink>
-        <br>
-        <RouterLink to="/Update">UpdateView</RouterLink>
-        </nav> 
+    <h1>Home Page</h1>
+    <nav>
+      <RouterLink to="/create">CreateView</RouterLink>
+      <br />
+      <RouterLink to="/detail">DetailView</RouterLink>
+      <br />
+      <RouterLink to="/update">UpdateView</RouterLink>
+    </nav>
 
     <div class="sidebar-header">
       <span>UserName</span>
     </div>
     <div class="sidebar-nav">
       <router-link to="/" class="nav-button text">Home</router-link>
-      <router-link to="/about" class="nav-button text">About</router-link>
+      
     </div>
-    <div @click="toggleModal" class="sidebar-footer text">
+    <!-- <div @click="toggleModal" class="sidebar-footer text">
       <span>Cart</span>
-      <Modal
-          v-model="showCartModal"
-          :title="'Cart'"
-      >
-        <p>{{handledTotal}}</p>
+      <Modal v-model="showCartModal" :title="'Cart'">
+        <p>{{ handledTotal }}</p>
       </Modal>
-    </div>
+    </div> -->
   </div>
 </template>
-
-
-  
-
 
 <style scoped>
 #sidebar {
@@ -72,7 +59,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 10vw;
-  cursor:pointer;
+  cursor: pointer;
   /* color: whitesmoke; */
   /* border-top: 2px solid white; */
 }
@@ -101,5 +88,4 @@ export default {
   text-transform: uppercase;
   color: var(--secondary-color);
 }
-
 </style>
