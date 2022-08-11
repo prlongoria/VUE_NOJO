@@ -1,15 +1,14 @@
-
 <script setup>
 
 </script>
 
 <template>
-    <button type="button" id="backButton">Volver</button>
+    <button type="button" id="addButton">Añadir</button>
 
 </template>
 
 <style>
-    #backButton {
+    #addButton {
         background-color: #849597;
         width: auto;
         margin: 1vw;

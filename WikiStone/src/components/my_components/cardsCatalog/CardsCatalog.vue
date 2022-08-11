@@ -1,47 +1,40 @@
 
-<script>
+<script setup>
+    //import dataStoneFake from '../../../stores/dataStoneFake.json';`
+    import { onBeforeMount } from 'vue';
+    import { useStonesStore } from '../../../stores/StonesStore';
+    //const stonesStore = useStonesStore();
+    useStonesStore();
+    onBeforeMount( () => {
+        console.log ("FUNCIONA")
+        //getStones
+    })
 
-export default {
-    data () {
-        return {
-            message: 'HELLO',
-            stones: 1,
-            stonesData: null
-        }
-    },
-    methods: {
-        async fetchData () {
-            this.stonesData = null
-            const res = await fetch(`../../../dataStoneFake.json/${this.stonesId}`)
-            this.stonesData = await res.json()
-        }
-    },
-    mounted() {
-        this.fetchData()
-    },
-    watch: {
-        stonesId() {
-            this.fetchData()
-        }
-    }
-}
-   
+    // const getStones = async () => {
+    //     await stonesStore.fetchStones()
+    // }
+    
+    // name: String;
+    // color: String;
+
+
 </script>
 
-<template>
-    <div class="panelCatalogCards" >
-        <div class="threeCards"> 
-            <div class="card">
+<template >
+    <div class="panelCatalogCards" v-for="stone in dataStoneFake" :stone="stone" >
+        <!-- <div class="threeCards">  -->
+            //
+            <div class="card" :name="stone.name" :color="stone.color">
                 <div class="imgTitleColor">
                     <div class="card__image-holder">
                         <img class="card__image" src="../../../images/kuncita-1.jpg"  alt="stone" />
                     </div>
                     <div id="titleColor">
                         <div class="card-title">
-                            <h2>{{message}}</h2>
+                            <h2>Nombre: {{stone.name}}</h2>
                         </div>
                         <div class="card-color">
-                            <h2>Color: rosa</h2>
+                            <h2>Color: {{stone.color}}</h2>
                         </div>
                     </div>
                 </div>
@@ -50,7 +43,7 @@ export default {
                 </div>
             </div>
 
-            <div class="card">
+            <!-- <div class="card">
             <div class="imgTitleColor">
                     <div class="card__image-holder">
                         <img class="card__image" src="../../../images/Cuarzo_rosa.jpg" alt="stone" />
@@ -67,8 +60,8 @@ export default {
                 <div class="card-attributes">
                     <h2>Attributes: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim. Sed mollis sit amet turpis nec ultricies. Duis mattis tellus eget cursus pretium. Nulla fermentum diam diam, id accumsan quam bibendum nec. Duis mollis egestas leo, non sollicitudin dui sollicitudin a. In accumsan diam feugiat libero tincidunt, sed molestie massa volutpat. Curabitur ut mauris at leo tristique molestie vel ac diam. Integer feugiat ipsum vitae sem blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit amet aliquam.</h2>
                 </div>
-            </div>
-            <div class="card">
+            </div> -->
+            <!-- <div class="card">
                 <div class="imgTitleColor">
                     <div class="card__image-holder">
                         <img class="card__image" src="../../../images/Cuarzo_rosa.jpg" alt="stone" />
@@ -85,9 +78,9 @@ export default {
                 <div class="card-attributes">
                     <h2>Attributes: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim. Sed mollis sit amet turpis nec ultricies. Duis mattis tellus eget cursus pretium. Nulla fermentum diam diam, id accumsan quam bibendum nec. Duis mollis egestas leo, non sollicitudin dui sollicitudin a. In accumsan diam feugiat libero tincidunt, sed molestie massa volutpat. Curabitur ut mauris at leo tristique molestie vel ac diam. Integer feugiat ipsum vitae sem blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit amet aliquam.</h2>
                 </div>
-            </div> 
-        </div>
-        <div class="threeCards">
+            </div>  -->
+        <!-- </div> -->
+        <!-- <div class="threeCards">
             <div class="card">
                 <div class="imgTitleColor">
                     <div class="card__image-holder">
@@ -145,7 +138,7 @@ export default {
                 </div>
             </div>
             
-        </div> 
+        </div>  -->
     </div>
 
 
@@ -163,8 +156,6 @@ export default {
         height: 100vh;
         overflow-y: auto;
         display: flex;
-        
-  
     }
     .card {
         padding: 1vw;

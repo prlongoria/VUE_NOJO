@@ -1,15 +1,13 @@
-
-
 <script setup>
 
 </script>
 
 <template>
 <div>
-    <h1 id="titleDetail">CUARZO ROSA</h1>
+    <h1 id="titleDetail">EDIT PAGE</h1>
     <img src="../../../images/Cuarzo_rosa.jpg" alt="Imagen de la piedra" id="detailImage">
-    <button type="button" id="editButton">📝</button>
-    <button type="button" id="deleteButton">🗑️</button>
+    <button type="button" id="homeButton">🏠</button>
+    
 </div>
 <div class="detailView">
     <p>

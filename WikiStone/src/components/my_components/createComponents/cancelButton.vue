@@ -1,15 +1,14 @@
-
 <script setup>
 
 </script>
 
 <template>
-    <button type="button" id="backButton">Volver</button>
+    <button type="button" id="cancelButton">Cancelar</button>
 
 </template>
 
 <style>
-    #backButton {
+    #cancelButton {
         background-color: #849597;
         width: auto;
         margin: 1vw;
