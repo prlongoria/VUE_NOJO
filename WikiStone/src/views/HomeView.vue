@@ -2,9 +2,10 @@
 
 <script setup>
   import SideBarVue from '../components/my_components/SideBar.vue';
-import HomeIntroduction from '../components/my_components/HomeIntroduction.vue';
-import CardsCatalog from '../components/my_components/cardsCatalog/CardsCatalog.vue';
-import AddStoneButton from '../components/my_components/addStoneButton.vue';
+  import HomeIntroduction from '../components/my_components/HomeIntroduction.vue';
+  import CardsCatalog from '../components/my_components/cardsCatalog/CardsCatalog.vue';
+  import AddStoneButton from '../components/my_components/addStoneButton.vue';
+// import CardsCatalogue from '../components/my_components/cardsCatalog/CardsCatalogue.vue';
 // import { useStonesStore } from "../stores/StonesStore.js";
 // useStonesStore();
 </script>
@@ -16,9 +17,9 @@ import AddStoneButton from '../components/my_components/addStoneButton.vue';
   
   <main class="homeview">
 
-
+    <!-- <CardsCatalogue /> -->
     
-        <CardsCatalog  />
+         <CardsCatalog  /> 
       
 
 

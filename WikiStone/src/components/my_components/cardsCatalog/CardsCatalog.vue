@@ -1,9 +1,9 @@
-
+<!-- composition api -->
 <script setup>
-    //import dataStoneFake from '../../../stores/dataStoneFake.json';`
+   
     import { onBeforeMount } from 'vue';
     import { useStonesStore } from '../../../stores/StonesStore';
-    //const stonesStore = useStonesStore();
+    const stonesStore = useStonesStore();
     useStonesStore();
     onBeforeMount( () => {
         console.log ("FUNCIONA")
@@ -14,27 +14,23 @@
     //     await stonesStore.fetchStones()
     // }
     
-    // name: String;
-    // color: String;
-
-
+    
 </script>
 
 <template >
-    <div class="panelCatalogCards" v-for="stone in dataStoneFake" :stone="stone" >
+    <div class="panelCatalogCards"  >
         <!-- <div class="threeCards">  -->
-            //
-            <div class="card" :name="stone.name" :color="stone.color">
+            <div class="card" >
                 <div class="imgTitleColor">
                     <div class="card__image-holder">
                         <img class="card__image" src="../../../images/kuncita-1.jpg"  alt="stone" />
                     </div>
                     <div id="titleColor">
                         <div class="card-title">
-                            <h2>Nombre: {{stone.name}}</h2>
+                            <h2>Nombre: {{name}}</h2>
                         </div>
                         <div class="card-color">
-                            <h2>Color: {{stone.color}}</h2>
+                            <h2>Color: {{color}}</h2>
                         </div>
                     </div>
                 </div>

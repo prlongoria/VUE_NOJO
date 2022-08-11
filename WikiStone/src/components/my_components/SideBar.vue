@@ -16,7 +16,7 @@ export default {
         <br>
         <RouterLink to="/DetailView">DetailView</RouterLink>
         <br>
-        <RouterLink to="/Update">Update View</RouterLink>
+        <RouterLink to="/Update">UpdateView</RouterLink>
         </nav> 
 
     <div class="sidebar-header">
