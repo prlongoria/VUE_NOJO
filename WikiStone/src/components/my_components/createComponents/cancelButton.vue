@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <button type="button" id="cancelButton">Cancelar</button>
+    <button type="button" id="cancelButton"><RouterLink to="/create" class="textButton">Cancelar</RouterLink></button>
 
 </template>
 

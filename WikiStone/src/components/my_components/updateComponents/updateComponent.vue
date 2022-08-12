@@ -2,16 +2,17 @@
 
 <template>
   <div>
-    <h1 id="titleDetail">CUARZO ROSA</h1>
+    <h1 id="titleUpdate">UPDATE PAGE</h1>
     <img
       src="../../../images/Cuarzo_rosa.jpg"
       alt="Imagen de la piedra"
-      id="detailImage"
+      id="updateImage"
     />
-    <button type="button" id="editButton"><RouterLink to="/update" class="textButton">📝</RouterLink></button>
-    <button type="button" id="deleteButton"><RouterLink to="/" class="textButton">🗑️</RouterLink></button>
+    <button type="button" id="homeButton">
+      <RouterLink to="/" class="textButton">🏠</RouterLink>
+    </button>
   </div>
-  <div class="detailView">
+  <div class="updateView">
     <p>Color: Rosa</p>
     <p>
       Atributos: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim.
@@ -49,15 +50,15 @@ p {
   text-align: justify;
   margin-bottom: 2vw;
 }
-#detailImage {
+#updateImage {
   padding: 15vw;
   margin-bottom: -10vw;
 }
-#titleDetail {
+#titleUpdate {
   font-size: 10vw;
   margin-bottom: -15vw;
 }
-.detailView {
+.updateView {
   background-color: #ebf1f4;
   height: 100vh;
   overflow-y: auto;

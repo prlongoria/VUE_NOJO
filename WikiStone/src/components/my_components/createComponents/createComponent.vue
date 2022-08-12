@@ -27,7 +27,7 @@
   <div>
     <h1 id="titleCreate">CREATE PAGE</h1>
     <img src="../../../images/agatas.jpg" alt="Añada Imagen de la piedra" id="createImage">
-    <button type="button" id="homeButton">🏠</button>
+    <button type="button" id="homeButton"><RouterLink to="/" class="textButton">🏠</RouterLink></button>
 </div>
 <div class="createView">
     <p>

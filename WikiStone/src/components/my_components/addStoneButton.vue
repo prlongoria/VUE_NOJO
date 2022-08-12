@@ -7,7 +7,8 @@ export default {
 </script>
 
 <template>
-    <button type="button" id="addButton">Añadir Mineral</button>
+
+    <button type="button" id="addButton"><RouterLink to="/create" class="textButton">Añadir Mineral</RouterLink></button>
   
 </template>
 
@@ -17,6 +18,9 @@ export default {
         width: auto;
         margin: 1vw;
         border-radius: 45vw;
+    }
+    .textButton {
+        color: white;
     }
 
 </style>

@@ -1,20 +1,23 @@
-
 <script setup>
-import EditComponent from '../components/my_components/editComponents/editComponent.vue';
+import UpdateComponent from "../components/my_components/updateComponents/updateComponent.vue";
+import UpdateButton from "../components/my_components/updateComponents/updateButton.vue";
+import CancelUpdateButton from "../components/my_components/updateComponents/cancelUpdateButton.vue";
 </script>
 
 <template>
-<h1>SOY LA UPDATE VIEW</h1>
-<EditComponent />
-    <!-- <div class="detailView">
+  <h1>SOY LA UPDATE VIEW</h1>
+  <div>
+    <UpdateComponent />
+  </div>
+  <UpdateButton />
+  <CancelUpdateButton />
+  <!-- <div class="detailView">
         <h1>ESTA ES LA DETAIL VIEW</h1>
     </div> -->
-    
 </template>
 
-
 <style lang="css" scoped>
-    /* .detailView{
+/* .detailView{
         background-color: #EBF1F4;
         height: 100vh;
         overflow-y: auto;
@@ -40,14 +43,6 @@ p {
   margin: 0 10px
 } */
 </style>
-
-
-
-
-
-
-
-
 
 <!-- <script setup>
     

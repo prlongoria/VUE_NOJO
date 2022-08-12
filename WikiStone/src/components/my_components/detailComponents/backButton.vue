@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <button type="button" id="backButton">Volver</button>
+    <button type="button" id="backButton"><RouterLink to="/" class="textButton">Volver</RouterLink></button>
 
 </template>
 

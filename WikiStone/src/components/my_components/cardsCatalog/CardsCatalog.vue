@@ -26,15 +26,17 @@ onBeforeMount(() => {
             <h1 class="stoneName">{{ stone.name }}</h1>
           </div>
           <div class="card-color">
-            <h2 id="colorStone">Color: </h2><p>{{ stone.color }}</p>
+            <h2 id="colorStone">Color:</h2>
+            <p>{{ stone.color }}</p>
           </div>
         </div>
       </div>
       <div class="card-attributes">
-        <h2 id="stoneAttributes">Atributos: </h2><p>{{ stone.attributes }}</p>
+        <h2 id="stoneAttributes">Atributos:</h2>
+        <p>{{ stone.attributes }}</p>
       </div>
       <div class="enlaceDetalle">
-      <a >Ver Más</a>
+        <RouterLink to="/detail">Ver Más</RouterLink>
       </div>
     </div>
   </div>
@@ -70,11 +72,9 @@ onBeforeMount(() => {
 
 .imgTitleColor {
   display: flex;
-  
 }
 .card-attributes {
   align-self: flex-start;
-  
 }
 .enlaceDetalle {
   margin-left: 85%;

@@ -11,12 +11,12 @@ export default {};
       <br />
       <RouterLink to="/update">UpdateView</RouterLink>
     </nav>
-    <div class="sidebar-header">
+    <!-- <div class="sidebar-header">
       <span>UserName</span>
     </div>
     <div class="sidebar-nav">
       <router-link to="/" class="nav-button text">Home</router-link>
-    </div>
+    </div> -->
     <!-- <div @click="toggleModal" class="sidebar-footer text">
       <span>Cart</span>
       <Modal v-model="showCartModal" :title="'Cart'">
