@@ -15,131 +15,28 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <div
-    v-for="stone in stonesStore.stones"
-    :key="stone.id"
-    class="panelCatalogCards"
-  >
-    <!-- <div class="threeCards">  -->
-    <div class="card">
+  <div class="panelCatalogCards">
+    <div v-for="stone in stonesStore.stones" :key="stone.id" class="card">
       <div class="imgTitleColor">
         <div class="card__image-holder">
-          <img
-            class="card__image"
-            src="../../../images/kuncita-1.jpg"
-            alt="stone"
-          />
+          <img class="card__image" :src="stone.image" alt="stone" />
         </div>
         <div id="titleColor">
           <div class="card-title">
-            <h2>Nombre: {{ stone.name }}</h2>
+            <h1 class="stoneName">{{ stone.name }}</h1>
           </div>
           <div class="card-color">
-            <h2>Color: {{ stone.color }}</h2>
+            <h2 id="colorStone">Color: </h2><p>{{ stone.color }}</p>
           </div>
         </div>
       </div>
       <div class="card-attributes">
-        <h2>Attributes: {{ stone.attributes }}</h2>
+        <h2 id="stoneAttributes">Atributos: </h2><p>{{ stone.attributes }}</p>
+      </div>
+      <div class="enlaceDetalle">
+      <a >Ver Más</a>
       </div>
     </div>
-
-    <!-- <div class="card">
-            <div class="imgTitleColor">
-                    <div class="card__image-holder">
-                        <img class="card__image" src="../../../images/Cuarzo_rosa.jpg" alt="stone" />
-                    </div>
-                    <div id="titleColor">
-                        <div class="card-title">
-                            <h2>Cuarzo Rosa</h2>
-                        </div>
-                        <div class="card-color">
-                            <h2>Color: rosa</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-attributes">
-                    <h2>Attributes: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim. Sed mollis sit amet turpis nec ultricies. Duis mattis tellus eget cursus pretium. Nulla fermentum diam diam, id accumsan quam bibendum nec. Duis mollis egestas leo, non sollicitudin dui sollicitudin a. In accumsan diam feugiat libero tincidunt, sed molestie massa volutpat. Curabitur ut mauris at leo tristique molestie vel ac diam. Integer feugiat ipsum vitae sem blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit amet aliquam.</h2>
-                </div>
-            </div> -->
-    <!-- <div class="card">
-                <div class="imgTitleColor">
-                    <div class="card__image-holder">
-                        <img class="card__image" src="../../../images/Cuarzo_rosa.jpg" alt="stone" />
-                    </div>
-                    <div id="titleColor">
-                        <div class="card-title">
-                            <h2>Cuarzo Rosa</h2>
-                        </div>
-                        <div class="card-color">
-                            <h2>Color: rosa</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-attributes">
-                    <h2>Attributes: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim. Sed mollis sit amet turpis nec ultricies. Duis mattis tellus eget cursus pretium. Nulla fermentum diam diam, id accumsan quam bibendum nec. Duis mollis egestas leo, non sollicitudin dui sollicitudin a. In accumsan diam feugiat libero tincidunt, sed molestie massa volutpat. Curabitur ut mauris at leo tristique molestie vel ac diam. Integer feugiat ipsum vitae sem blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit amet aliquam.</h2>
-                </div>
-            </div>  -->
-    <!-- </div> -->
-    <!-- <div class="threeCards">
-            <div class="card">
-                <div class="imgTitleColor">
-                    <div class="card__image-holder">
-                        <img class="card__image" src="../../../images/Cuarzo_rosa.jpg" alt="stone" />
-                    </div>
-                    <div id="titleColor">
-                        <div class="card-title">
-                            <h2>Cuarzo Rosa</h2>
-                        </div>
-                        <div class="card-color">
-                            <h2>Color: rosa</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-attributes">
-                    <h2>Attributes: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim. Sed mollis sit amet turpis nec ultricies. Duis mattis tellus eget cursus pretium. Nulla fermentum diam diam, id accumsan quam bibendum nec. Duis mollis egestas leo, non sollicitudin dui sollicitudin a. In accumsan diam feugiat libero tincidunt, sed molestie massa volutpat. Curabitur ut mauris at leo tristique molestie vel ac diam. Integer feugiat ipsum vitae sem blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit amet aliquam.</h2>
-                </div>
-                
-            </div>
-
-            <div class="card">
-                <div class="imgTitleColor">
-                    <div class="card__image-holder">
-                        <img class="card__image" src="../../../images/Cuarzo_rosa.jpg" alt="stone" />
-                    </div>
-                    <div id="titleColor">
-                        <div class="card-title">
-                            <h2>Cuarzo Rosa</h2>
-                        </div>
-                        <div class="card-color">
-                            <h2>Color: rosa</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-attributes">
-                    <h2>Attributes: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim. Sed mollis sit amet turpis nec ultricies. Duis mattis tellus eget cursus pretium. Nulla fermentum diam diam, id accumsan quam bibendum nec. Duis mollis egestas leo, non sollicitudin dui sollicitudin a. In accumsan diam feugiat libero tincidunt, sed molestie massa volutpat. Curabitur ut mauris at leo tristique molestie vel ac diam. Integer feugiat ipsum vitae sem blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit amet aliquam.</h2>
-                </div>
-            </div>
-            <div class="card">
-                <div class="imgTitleColor">
-                    <div class="card__image-holder">
-                        <img class="card__image" src="../../../images/Cuarzo_rosa.jpg" alt="stone" />
-                    </div>
-                    <div id="titleColor">
-                        <div class="card-title">
-                            <h2>Cuarzo Rosa</h2>
-                        </div>
-                        <div class="card-color">
-                            <h2>Color: rosa</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-attributes">
-                    <h2>Attributes: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim. Sed mollis sit amet turpis nec ultricies. Duis mattis tellus eget cursus pretium. Nulla fermentum diam diam, id accumsan quam bibendum nec. Duis mollis egestas leo, non sollicitudin dui sollicitudin a. In accumsan diam feugiat libero tincidunt, sed molestie massa volutpat. Curabitur ut mauris at leo tristique molestie vel ac diam. Integer feugiat ipsum vitae sem blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit amet aliquam.</h2>
-                </div>
-            </div>
-            
-        </div>  -->
   </div>
 </template>
 
@@ -152,6 +49,7 @@ onBeforeMount(() => {
   height: 100vh;
   overflow-y: auto;
   display: flex;
+  flex-wrap: wrap;
 }
 .card {
   padding: 1vw;
@@ -161,18 +59,33 @@ onBeforeMount(() => {
   text-align: justify;
   overflow-y: auto;
   height: 30vw;
+  display: flex;
+  flex-wrap: wrap;
 }
-#titleColor {
-  text-align: right;
-}
+
 .card__image-holder {
-  width: 12vw;
+  width: 25%;
+  margin-right: 5%;
 }
-.threeCards {
-  height: 25vw;
-}
+
 .imgTitleColor {
   display: flex;
-  justify-content: space-around;
+  
+}
+.card-attributes {
+  align-self: flex-start;
+  
+}
+.enlaceDetalle {
+  margin-left: 85%;
+}
+#stoneAttributes {
+  font-weight: bold;
+}
+#colorStone {
+  font-weight: bold;
+}
+#titleColor {
+  align-self: center;
 }
 </style>

@@ -1,7 +1,6 @@
 <script>
 export default {};
 </script>
-
 <template>
   <div id="sidebar">
     <h1>Home Page</h1>
@@ -12,13 +11,11 @@ export default {};
       <br />
       <RouterLink to="/update">UpdateView</RouterLink>
     </nav>
-
     <div class="sidebar-header">
       <span>UserName</span>
     </div>
     <div class="sidebar-nav">
       <router-link to="/" class="nav-button text">Home</router-link>
-      
     </div>
     <!-- <div @click="toggleModal" class="sidebar-footer text">
       <span>Cart</span>
