@@ -34,4 +34,7 @@ input {
   transition: all 0.5s;
   border-radius: 15px;
 }
+.searchBar {
+  margin-left: 1vw;
+}
 </style>
