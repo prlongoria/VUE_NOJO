@@ -40,20 +40,20 @@ export default {
   /* text-decoration: none; */
   font-size: 1.5vw;
   margin-top: 0vw;
-  
 }
-header>figcaption {
+header > figcaption {
   width: 25vw;
   padding: calc(1vw + 1vh);
-  
-  max-width: 190px;
-  min-width: 60px;
+
+  max-width: 1290px;
+  min-width: 80px;
 }
 .logo {
   border-radius: 55%;
   width: 90%;
   margin: auto;
 }
+
 #WikiTitle {
   font-family: "Jacques Francois";
   color: white;
@@ -75,5 +75,4 @@ header {
   background-color: transparent;
   border: none;
 }
-
 </style>
