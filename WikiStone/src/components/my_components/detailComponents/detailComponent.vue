@@ -8,8 +8,12 @@
       alt="Imagen de la piedra"
       id="detailImage"
     />
-    <button type="button" id="editButton"><RouterLink to="/update" class="textButton">📝</RouterLink></button>
-    <button type="button" id="deleteButton"><RouterLink to="/" class="textButton">🗑️</RouterLink></button>
+    <button type="button" id="editButton">
+      <RouterLink to="/update" class="textButton">📝</RouterLink>
+    </button>
+    <button type="button" id="deleteButton">
+      <RouterLink to="/" class="textButton">🗑️</RouterLink>
+    </button>
   </div>
   <div class="detailView">
     <p>Color: Rosa</p>
@@ -54,7 +58,7 @@ p {
   margin-bottom: -10vw;
 }
 #titleDetail {
-  font-size: 10vw;
+  font-size: 5vw;
   margin-bottom: -15vw;
 }
 .detailView {

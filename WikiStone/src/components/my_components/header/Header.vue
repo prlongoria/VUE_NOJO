@@ -9,7 +9,8 @@ export default {
 <template>
   <header>
     <figcaption>
-      <img class="logo" src="@/images/logo_provisional.jpg" />
+      <!-- <img class="logo" src="@/images/logo_provisional.jpg" /> -->
+      <img class="logo" src="@/images/logo-wikipiedra.jpg" />
     </figcaption>
     <div class="title">
       <h1 id="WikiTitle">WIKIPIEDRA</h1>
