@@ -12,11 +12,11 @@ export default {
   
 </template>
 
-<style>
+<style >
     #addButton {
         background-color: #849597;
         width: auto;
-        margin: 1vw;
+        margin: 2vw;
         border-radius: 45vw;
     }
     .textButton {

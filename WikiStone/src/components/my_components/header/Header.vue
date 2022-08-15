@@ -7,12 +7,12 @@ export default {
 </script>
 
 <template>
-  <header class="header">
-    <div class="headerImage">
+  <header>
+    <figcaption>
       <img class="logo" src="@/images/logo_provisional.jpg" />
-    </div>
+    </figcaption>
     <div class="title">
-      <h1 id="WikiTitle">WIKISTONE</h1>
+      <h1 id="WikiTitle">WIKIPIEDRA</h1>
     </div>
 
     <SearchBarVue></SearchBarVue>
@@ -40,23 +40,33 @@ export default {
   /* text-decoration: none; */
   font-size: 1.5vw;
   margin-top: 0vw;
+  
+}
+header>figcaption {
+  width: 25vw;
+  padding: calc(1vw + 1vh);
+  
+  max-width: 190px;
+  min-width: 60px;
 }
 .logo {
-  width: 25vw;
-  padding: 3vw;
+  border-radius: 55%;
+  width: 90%;
+  margin: auto;
 }
 #WikiTitle {
   font-family: "Jacques Francois";
   color: white;
   font-size: 5vw;
 }
-.header {
+header {
   width: 100%;
   /* overflow: hidden; */
   background: #ce918d;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 .menuNav {
   padding: 1vw;
@@ -65,4 +75,5 @@ export default {
   background-color: transparent;
   border: none;
 }
+
 </style>

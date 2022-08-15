@@ -7,7 +7,9 @@
 
 </template>
 
-<style>
+<style scoped>
+
+
     #addButton {
         background-color: #849597;
         width: auto;

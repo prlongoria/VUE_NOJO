@@ -10,6 +10,7 @@ export default {};
       type="text"
       placeholder="🔎 Busca tu piedra"
       name="search"
+      onkeyup="autocompletado()"
     />
   </div>
 </template>

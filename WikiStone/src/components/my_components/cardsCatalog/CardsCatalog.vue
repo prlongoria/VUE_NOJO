@@ -60,7 +60,7 @@ onBeforeMount(() => {
   background-color: white;
   text-align: justify;
   overflow-y: auto;
-  height: 30vw;
+  /* height: 30vw; */
   display: flex;
   flex-wrap: wrap;
 }
