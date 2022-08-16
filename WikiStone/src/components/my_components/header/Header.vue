@@ -62,15 +62,16 @@ header > figcaption {
 }
 header {
   width: 100%;
-  /* overflow: hidden; */
+  min-width: 200px;
   background: #ce918d;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .menuNav {
-  padding: 1vw;
+  padding: 3vw;
+  margin-left: 2vw;
 }
 #buttonContacto {
   background-color: transparent;
