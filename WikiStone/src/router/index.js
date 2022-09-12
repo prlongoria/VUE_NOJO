@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router"
-import HomeView from "../views/HomeView.vue"
-import DetailView from "../views/DetailView.vue"
-import CreateView from "../views/CreateView.vue"
-import UpdateView from "../views/UpdateVIew.vue"
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import DetailView from "../views/DetailView.vue";
+import CreateView from "../views/CreateView.vue";
+import UpdateView from "../views/UpdateVIew.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,24 +10,24 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView
+      component: HomeView,
     },
     {
       path: "/detail",
       name: "DetailView",
-      component: DetailView
+      component: DetailView,
     },
     {
       path: "/create",
       name: "CreateView",
-      component: CreateView
+      component: CreateView,
     },
     {
       path: "/update",
       name: "UpdateView",
-      component: UpdateView
+      component: UpdateView,
     },
-  ]
-}) 
+  ],
+});
 
-export default router
+export default router;
