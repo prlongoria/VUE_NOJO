@@ -10,11 +10,11 @@ const props = defineProps({
   },
   healing: {
     type: String,
-    required: true,
+    // required: true,
   },
   position: {
     type: String,
-    required: true,
+    // required: true,
   },
   color: {
     type: String,
@@ -22,20 +22,20 @@ const props = defineProps({
   },
   attributes: {
     type: String,
-    required: true,
+    // required: true,
   },
   image: {
     type: String,
-    required: true,
+    // required: true,
   },
 });
 </script>
 
 <template>
   <div>
-    <h1 id="titleDetail">{{ props.name }}</h1>
+    <h1 id="titleDetail">{{ name }}</h1>
     <img
-      src="{{ props.image }}"
+      src="{{ image }}"
       alt="Imagen de la piedra"
       id="detailImage"
     />
@@ -49,12 +49,12 @@ const props = defineProps({
   <div class="detailView">
     <p>Color: {{ color }}</p>
     <p>Atributos: 
-      {{ props.attributes }}
+      {{ attributes }}
     </p>
     <p>Sanación: 
-      {{ props.healing }}
+      {{ healing }}
     </p>
-    <p>Posición: {{ props.position }}</p>
+    <p>Posición: {{ position }}</p>
     <p>Chakras:Pellentesque eget scelerisque augue.</p>
     <p>Signo del Zodíaco:Pellentesque eget scelerisque augue.</p>
   </div>
