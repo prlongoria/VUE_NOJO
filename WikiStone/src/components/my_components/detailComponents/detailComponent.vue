@@ -1,10 +1,41 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  id: {
+    type: Number,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  healing: {
+    type: String,
+    required: true,
+  },
+  position: {
+    type: String,
+    required: true,
+  },
+  color: {
+    type: String,
+    required: true,
+  },
+  attributes: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+});
+</script>
 
 <template>
   <div>
-    <h1 id="titleDetail">CUARZO ROSA</h1>
+    <h1 id="titleDetail">{{ name }}</h1>
     <img
-      src="../../../images/Cuarzo_rosa.jpg"
+      src="{{ image }}"
       alt="Imagen de la piedra"
       id="detailImage"
     />
@@ -16,29 +47,14 @@
     </button>
   </div>
   <div class="detailView">
-    <p>Color: Rosa</p>
-    <p>
-      Atributos: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim.
-      Sed mollis sit amet turpis nec ultricies. Duis mattis tellus eget cursus
-      pretium. Nulla fermentum diam diam, id accumsan quam bibendum nec. Duis
-      mollis egestas leo, non sollicitudin dui sollicitudin a. In accumsan diam
-      feugiat libero tincidunt, sed molestie massa volutpat. Curabitur ut mauris
-      at leo tristique molestie vel ac diam. Integer feugiat ipsum vitae sem
-      blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit
-      amet aliquam. Fusce sed nunc in sem molestie accumsan. Nunc vitae eros id
-      massa venenatis gravida.
+    <p>Color: {{ color }}</p>
+    <p>Atributos: 
+      {{ attributes }}
     </p>
-    <p>
-      Sanación:Pellentesque eget scelerisque augue. Fusce vitae aliquam enim.
-      Sed mollis sit amet turpis nec ultricies. Duis mattis tellus eget cursus
-      pretium. Nulla fermentum diam diam, id accumsan quam bibendum nec. Duis
-      mollis egestas leo, non sollicitudin dui sollicitudin a. In accumsan diam
-      feugiat libero tincidunt, sed molestie massa volutpat. Curabitur ut mauris
-      at leo tristique molestie vel ac diam. Integer feugiat ipsum vitae sem
-      blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit
-      amet aliquam.
+    <p>Sanación: 
+      {{ healing }}
     </p>
-    <p>Posición:Pellentesque eget scelerisque augue.</p>
+    <p>Posición: {{ position }}</p>
     <p>Chakras:Pellentesque eget scelerisque augue.</p>
     <p>Signo del Zodíaco:Pellentesque eget scelerisque augue.</p>
   </div>

@@ -1,15 +1,12 @@
 <!-- composition api -->
 <script setup>
+
 import { onBeforeMount, ref } from "vue";
-//import { useStonesStore } from "../../../stores/StonesStore";
-// const stonesStore = useStonesStore();
-// useStonesStore();
+
 let getStones = ref([]);
 onBeforeMount(async () => {
   console.log("FUNCIONA");
-  // getStones = async () => {
-  //   await stonesStore.fetchStones();
-  // };
+
   getStones.value = await fetch("http://localhost:8080/api/v1/stone/")
     .then((res) => res.json())
     .then((data) => {
@@ -20,6 +17,7 @@ onBeforeMount(async () => {
 </script>
 
 <template>
+  
   <div class="panelCatalogCards">
     <div v-for="stone in getStones" :key="stone.id" class="card">
       <div class="imgTitleColor">
