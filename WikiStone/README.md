@@ -1,5 +1,11 @@
 # WikiStone
 
+1.- Arrancar mySQL en xampp
+2.- Arrancar el servidor del back en intelliJ
+3.- npm run dev para arrancar el servidor del front
+
+Y ya puedes ver la aplicación
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
