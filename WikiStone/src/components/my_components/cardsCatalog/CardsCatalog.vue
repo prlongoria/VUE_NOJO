@@ -1,6 +1,6 @@
 <!-- composition api -->
 <script setup>
-// import detailComponentVue from "../detailComponents/detailComponent.vue";
+ import detailComponentVue from "../detailComponents/detailComponent.vue";
 import { onBeforeMount, ref } from "vue";
 // import DetailComponent from "../detailComponents/detailComponent.vue";
 
