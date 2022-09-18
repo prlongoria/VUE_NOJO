@@ -1,7 +1,8 @@
 <!-- composition api -->
 <script setup>
-
+// import detailComponentVue from "../detailComponents/detailComponent.vue";
 import { onBeforeMount, ref } from "vue";
+// import DetailComponent from "../detailComponents/detailComponent.vue";
 
 let getStones = ref([]);
 onBeforeMount(async () => {
@@ -41,9 +42,19 @@ onBeforeMount(async () => {
       <div class="enlaceDetalle">
         <RouterLink to="/detail">Ver Más</RouterLink>
       </div>
+      <DetailComponent 
+        :id="stone.id"
+        :name="stone.name"
+        :healing="stone.healing"
+        :attributes="stone.attributes"
+        :color="stone.color"
+        :position="stone.position"
+        :image="stone.image"
+        
+      />
     </div>
   </div>
-</template>
+</template> 
 
 <style lang="css" scoped>
 .panelCatalogCards {
