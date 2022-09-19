@@ -1,6 +1,6 @@
 <!-- composition api -->
 <script setup>
- import detailComponentVue from "../detailComponents/detailComponent.vue";
+ import detailComponent from "../detailComponents/detailComponent.vue";
 import { onBeforeMount, ref } from "vue";
 // import DetailComponent from "../detailComponents/detailComponent.vue";
 
@@ -42,7 +42,7 @@ onBeforeMount(async () => {
       <div class="enlaceDetalle">
         <RouterLink to="/detail">Ver Más</RouterLink>
       </div>
-      <DetailComponent 
+      <detailComponent 
         :id="stone.id"
         :name="stone.name"
         :healing="stone.healing"
