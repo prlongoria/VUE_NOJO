@@ -1,44 +1,38 @@
+<!-- composition Api:
 <script setup>
 const props = defineProps({
-  id: {
-    type: Number,
-    // required: true,
-  },
-  name: {
-    type: String,
-    // required: true,
-  },
-  healing: {
-    type: String,
-    // required: true,
-  },
-  position: {
-    type: String,
-    // required: true,
-  },
-  color: {
-    type: String,
-    // required: true,
-  },
-  attributes: {
-    type: String,
-    // required: true,
-  },
-  image: {
-    type: String,
-    // required: true,
-  },
+  id: Number,
+  
+  name: String,
+  
+  healing: String,
+ 
+  position: String,
+  
+  color: String,
+  
+  attributes: String,
+  
+  image: String,
+  
+  stone: Object
 });
+</script> -->
+
+<!-- Api Option: -->
+<script>
+export default ({
+  props: {
+    stone: Object
+  }
+})
 </script>
+
 
 <template>
   <div>
     <h1 id="titleDetail">{{ name }}</h1>
-    <img
-      src="{{ image }}"
-      alt="Imagen de la piedra"
-      id="detailImage"
-    />
+    <img src="{{ image }}" alt="Imagen de la piedra" id="detailImage" />
     <button type="button" id="editButton">
       <RouterLink to="/update" class="textButton">📝</RouterLink>
     </button>
@@ -48,10 +42,12 @@ const props = defineProps({
   </div>
   <div class="detailView">
     <p>Color: {{ color }}</p>
-    <p>Atributos: 
+    <p>
+      Atributos:
       {{ attributes }}
     </p>
-    <p>Sanación: 
+    <p>
+      Sanación:
       {{ healing }}
     </p>
     <p>Posición: {{ position }}</p>

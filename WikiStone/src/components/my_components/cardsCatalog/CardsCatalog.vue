@@ -1,5 +1,5 @@
 <!-- composition api -->
-<script setup>
+<!-- <script setup>
  import detailComponent from "../detailComponents/detailComponent.vue";
 import { onBeforeMount, ref } from "vue";
 // import DetailComponent from "../detailComponents/detailComponent.vue";
@@ -15,12 +15,32 @@ onBeforeMount(async () => {
       return data;
     });
 });
+</script> -->
+
+<!-- Api Option: -->
+<script>
+import detailComponent from "../detailComponents/detailComponent.vue";
+export default {
+  data() {
+    return {
+      stones: []
+    };
+  },
+  created() {
+    fetch("http://localhost:8080/api/v1/stone/")
+      .then((response) => response.json())
+      .then((data) => {
+        this.stones = data;
+      });
+  },
+  components: detailComponent,
+  
+}
 </script>
 
 <template>
-  
   <div class="panelCatalogCards">
-    <div v-for="stone in getStones" :key="stone.id" class="card">
+    <div v-for="stone in stones" :key="stone.id" :stone="stone" class="card">
       <div class="imgTitleColor">
         <div class="card__image-holder">
           <img class="card__image" :src="stone.image" alt="stone" />
@@ -42,7 +62,7 @@ onBeforeMount(async () => {
       <div class="enlaceDetalle">
         <RouterLink to="/detail">Ver Más</RouterLink>
       </div>
-      <detailComponent 
+      <!-- <detailComponent 
         :id="stone.id"
         :name="stone.name"
         :healing="stone.healing"
@@ -51,10 +71,10 @@ onBeforeMount(async () => {
         :position="stone.position"
         :image="stone.image"
         
-      />
+      /> -->
     </div>
   </div>
-</template> 
+</template>
 
 <style lang="css" scoped>
 .panelCatalogCards {
