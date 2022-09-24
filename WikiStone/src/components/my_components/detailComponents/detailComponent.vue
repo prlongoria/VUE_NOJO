@@ -21,20 +21,37 @@ const props = defineProps({
 
 <!-- Api Option: -->
 <script>
-export default ({
-  props: {
-    stone: Object
-  }
-})
-</script>
+// export default ({
+//   props: {
+//     stone: Object
+//   }
+// })
 
+export default {
+  data() {
+    return {
+      stones: [],
+    };
+  },
+  created() {
+    const url = window.location.href;
+    const id = url.substring(-1);
+    console.log (id);
+    fetch("http://localhost:8080/api/v1/stone/")
+      .then((response) => response.json())
+      .then((data) => {
+        this.stones = data;
+      });
+  },
+};
+</script>
 
 <template>
   <div>
     <h1 id="titleDetail">{{ name }}</h1>
     <img src="{{ image }}" alt="Imagen de la piedra" id="detailImage" />
     <button type="button" id="editButton">
-      <RouterLink to="/update" class="textButton">📝</RouterLink>
+      <RouterLink to="/update/{{id}}" class="textButton">📝</RouterLink>
     </button>
     <button type="button" id="deleteButton">
       <RouterLink to="/" class="textButton">🗑️</RouterLink>

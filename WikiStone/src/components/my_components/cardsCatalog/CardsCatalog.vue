@@ -23,7 +23,7 @@ import detailComponent from "../detailComponents/detailComponent.vue";
 export default {
   data() {
     return {
-      stones: []
+      stones: [],
     };
   },
   created() {
@@ -33,9 +33,11 @@ export default {
         this.stones = data;
       });
   },
-  components: detailComponent,
+  components: 
+  detailComponent,
   
-}
+  
+};
 </script>
 
 <template>
@@ -60,9 +62,10 @@ export default {
         <p>{{ stone.attributes }}</p>
       </div>
       <div class="enlaceDetalle">
-        <RouterLink to="/detail">Ver Más</RouterLink>
-      </div>
-      <!-- <detailComponent 
+        <!-- <RouterLink to="/detail?${ stone.id }">Ver Más</RouterLink> -->
+        <RouterLink to="/update/{{id}}" class="textButton">📝</RouterLink>
+
+        <!-- <detailComponent 
         :id="stone.id"
         :name="stone.name"
         :healing="stone.healing"
@@ -72,6 +75,7 @@ export default {
         :image="stone.image"
         
       /> -->
+      </div>
     </div>
   </div>
 </template>

@@ -12,6 +12,7 @@
       <RouterLink to="/" class="textButton">🏠</RouterLink>
     </button>
   </div>
+  <form>
   <div class="updateView">
     <p>Color: Rosa</p>
     <p>
@@ -39,6 +40,7 @@
     <p>Chakras:Pellentesque eget scelerisque augue.</p>
     <p>Signo del Zodíaco:Pellentesque eget scelerisque augue.</p>
   </div>
+</form>
 </template>
 
 <style lang="css" scoped>
