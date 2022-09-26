@@ -21,29 +21,29 @@ const props = defineProps({
 
 <!-- Api Option: -->
 <script>
-// export default ({
-//   props: {
-//     stone: Object
-//   }
-// })
+export default ({
+  props: {
+    stone: Object,
+  },
+})
 
-export default {
-  data() {
-    return {
-      stones: [],
-    };
-  },
-  created() {
-    const url = window.location.href;
-    const id = url.substring(-1);
-    console.log (id);
-    fetch("http://localhost:8080/api/v1/stone/")
-      .then((response) => response.json())
-      .then((data) => {
-        this.stones = data;
-      });
-  },
-};
+// export default {
+//   data() {
+//     return {
+//       stones: [],
+//     };
+//   },
+//   created() {
+//     const url = window.location.href;
+//     const id = url.substring(-1);
+//     console.log (id);
+//     fetch("http://localhost:8080/api/v1/stone/")
+//       .then((response) => response.json())
+//       .then((data) => {
+//         this.stones = data;
+//       });
+//   },
+//};
 </script>
 
 <template>
@@ -56,6 +56,9 @@ export default {
     <button type="button" id="deleteButton">
       <RouterLink to="/" class="textButton">🗑️</RouterLink>
     </button>
+
+
+    
   </div>
   <div class="detailView">
     <p>Color: {{ color }}</p>

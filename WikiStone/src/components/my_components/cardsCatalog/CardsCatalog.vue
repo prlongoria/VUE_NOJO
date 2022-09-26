@@ -26,23 +26,108 @@ export default {
       stones: [],
     };
   },
-  created() {
-    fetch("http://localhost:8080/api/v1/stone/")
-      .then((response) => response.json())
-      .then((data) => {
-        this.stones = data;
-      });
+  // created() {
+  //   fetch("http://localhost:8080/api/v1/stone/")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       this.stones = data;
+  //     });
+  // },
+
+  methods: {
+    async getStones() {
+      //método read que en mi caso era created()
+      try {
+        const response = await fetch("http://localhost:8080/api/v1/stone/");
+        this.stones = await response.json();
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
+    async showStones(id) {
+      //método show
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/v1/stone/show/${stone.id}`,
+          {
+            method: "SHOW",
+          }
+        );
+        this.stones = await response.json();
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
+    async postStone(stone) {
+      // Método para crear un stone
+      try {
+        const response = await fetch(
+          "http://localhost:8080/api/v1/stone/create",
+          {
+            method: "POST",
+            body: JSON.stringify(stone),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          }
+        );
+
+        const stoneCreated = await response.json();
+        this.stones = [...this.stones, stoneCreated];
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async putStone(stone) {
+      // Método para actualizar un stone
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/v1/stone/update/${stone.id}`,
+          {
+            method: "PUT",
+            body: JSON.stringify(stone),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          }
+        );
+
+        const stoneUpdated = await response.json();
+        this.stones = this.stones.map((u) =>
+          u.id === stone.id ? stoneUpdated : u
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async deleteStone(stone) {
+      // Método para borrar un stone
+      try {
+        await fetch(`http://localhost:8080/api/v1/stone/delete/${stone.id}`, {
+          method: "DELETE",
+        });
+
+        this.stones = this.stones.filter((u) => u.id !== stone.id);
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
-  components: 
-  detailComponent,
-  
-  
+  mounted() {
+    this.getStones();
+  },
+
+  components: detailComponent,
 };
 </script>
 
 <template>
   <div class="panelCatalogCards">
-    <div v-for="stone in stones" :key="stone.id" :stone="stone" class="card">
+    <div
+      v-for="stone in stones"
+      :key="stone.id"
+      :stone="stone"
+      @delete-stone="deleteStone"
+      class="card"
+    >
       <div class="imgTitleColor">
         <div class="card__image-holder">
           <img class="card__image" :src="stone.image" alt="stone" />
@@ -62,8 +147,21 @@ export default {
         <p>{{ stone.attributes }}</p>
       </div>
       <div class="enlaceDetalle">
-        <!-- <RouterLink to="/detail?${ stone.id }">Ver Más</RouterLink> -->
-        <RouterLink to="/update/{{id}}" class="textButton">📝</RouterLink>
+        <!-- <RouterLink to="/detail/{{id}}">Ver Más</RouterLink> -->
+        <!-- <RouterLink to="/update/{{id}}" class="textButton">📝</RouterLink>  -->
+
+        <button class="btn btn-danger ml-2" @click="showStone">Ver Más</button>
+
+        <button
+          class="btn btn-danger ml-2"
+          @click="$emit('delete-stone', stone)"
+        >
+          🗑️
+        </button>
+
+        <button class="btn btn-info" @click="editStone(stone)">
+          ✏️ Editar
+        </button>
 
         <!-- <detailComponent 
         :id="stone.id"

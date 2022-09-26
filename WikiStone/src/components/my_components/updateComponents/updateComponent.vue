@@ -1,4 +1,6 @@
-<script setup></script>
+<script>
+
+</script>
 
 <template>
   <div>
@@ -13,7 +15,71 @@
     </button>
   </div>
   <form>
-  <div class="updateView">
+    <table class="updateView">
+      <tbody>
+        <tr v-for="stone in stones" :key="stone.id">
+          <td v-if="editando === stone.id">
+            <input type="text" class="form-control" v-model="stone.name" />
+          </td>
+          <td v-else>
+            {{ stone.name }}
+          </td>
+          <td v-if="editando === stone.id">
+            <input type="text" class="form-control" v-model="stone.color" />
+          </td>
+          <td v-else>
+            {{ stone.color }}
+          </td>
+
+          <td v-if="editando === stone.id">
+            <input
+              type="text"
+              class="form-control"
+              v-model="stone.attributes"
+            />
+          </td>
+          <td v-else>
+            {{ stone.attributes }}
+          </td>
+          <td v-if="editando === stone.id">
+            <input type="text" class="form-control" v-model="stone.healing" />
+          </td>
+          <td v-else>
+            {{ stone.healing }}
+          </td>
+          <td v-if="editando === stone.id">
+            <input type="text" class="form-control" v-model="stone.position" />
+          </td>
+          <td v-else>
+            {{ stone.position }}
+          </td>
+
+          <td v-if="editando === stone.id">
+            <button class="btn btn-success" @click="guardarStone(stone)">
+              💾 Guardar
+            </button>
+            <button
+              class="btn btn-secondary ml-2"
+              @click="cancelEdicion(stone)"
+            >
+              ❌ Cancelar
+            </button>
+          </td>
+          <td v-else>
+            <button class="btn btn-info" @click="editStone(stone)">
+              ✏️ Editar
+            </button>
+            <button
+              class="btn btn-danger ml-2"
+              @click="$emit('delete-stone', stone)"
+            >
+              🗑️ Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+
+      <!-- <p>Nombre: </p>
     <p>Color: Rosa</p>
     <p>
       Atributos: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim.
@@ -36,11 +102,11 @@
       blandit, non tristique nunc facilisis. In scelerisque sit amet massa sit
       amet aliquam.
     </p>
-    <p>Posición:Pellentesque eget scelerisque augue.</p>
-    <p>Chakras:Pellentesque eget scelerisque augue.</p>
-    <p>Signo del Zodíaco:Pellentesque eget scelerisque augue.</p>
-  </div>
-</form>
+    <p>Posición:Pellentesque eget scelerisque augue.</p> -->
+      <!-- <p>Chakras:Pellentesque eget scelerisque augue.</p>
+    <p>Signo del Zodíaco:Pellentesque eget scelerisque augue.</p> -->
+    </table>
+  </form>
 </template>
 
 <style lang="css" scoped>
