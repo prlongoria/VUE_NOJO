@@ -1,6 +1,4 @@
-<script>
-
-</script>
+<script></script>
 
 <template>
   <div>
@@ -14,7 +12,10 @@
       <RouterLink to="/" class="textButton">🏠</RouterLink>
     </button>
   </div>
-  <form>
+  <form
+    action="`http://localhost:8080/api/v1/stone/update/${stone.id}`"
+    method="put"
+  >
     <table class="updateView">
       <tbody>
         <tr v-for="stone in stones" :key="stone.id">

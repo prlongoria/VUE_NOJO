@@ -1,24 +1,32 @@
-<!-- Esto sólo lo dejo aquí como encauzado para cuando tenga tiempo hacer el create y delete en vue3 para practicar, pero lo haré en JAVA que es lo que me piden -->
-<!-- Tendría que rellenar el template con un v-for -->
-<!-- Puedo eliminar este componente cuando quiera, ni siquiera lo he linkado con nada, sólo es como una hoja de apuntes -->
-<script setup>
-// export default {
-//     data () {
-//         return {
-//             newStone: '',
-//             stones:[
-//                 {id: 'id', name: 'name', attributes: 'attributes', healing: 'healing', position: 'position', color: 'color'}
-//             ]
-//         }
-//     },
-//     methods: {
-//         addNewStone() {
-//             this.stones.push({id: 'id', name: 'name',attributes: 'attributes', healing: 'healing', position: 'position', color: 'color'})
-//             this.newStone=''
-//         }
-//     },
+<script>
+import axios from "axios";
 
-// }
+export default {
+  name: "createComponent",
+
+  data() {
+    return {
+      form: {
+        image: "",
+        name: "",
+        color: "",
+        attributes: "",
+        healing: "",
+        position: "",
+      },
+    };
+  },
+  methods: {
+    async createStone() {
+      const url = "http://localhost:8080/api/v1/stone/create";
+
+      const response = await axios.post(url, this.form);
+
+      console.log(response);
+      this.$router.push("/");
+    },
+  },
+};
 </script>
 
 <template>
@@ -33,36 +41,29 @@
       <RouterLink to="/" class="textButton">🏠</RouterLink>
     </button>
   </div>
-  <form action="http://localhost:8080/api/v1/stone/create" method="post">
+
+  <form @submit.prevent="createStone">
     <div class="createView">
       <label for="image">Imagen:</label>
-      <input name="image" type="text" />
+      <input name="image" type="text" v-model="form.image" />
 
       <label for="name">Nombre:</label>
-      <input name="name" type="text" />
+      <input name="name" type="text" v-model="form.name" />
 
       <label for="color">Color:</label>
-      <input name="color" type="text" />
+      <input name="color" type="text" v-model="form.color" />
 
       <label for="attributes">Atributos:</label>
-      <input name="attributes" type="text" />
+      <input name="attributes" type="text" v-model="form.attributes" />
 
       <label for="healing">Sanación:</label>
-      <input name="healing" type="text" />
+      <input name="healing" type="text" v-model="form.healing" />
 
       <label for="position">Posición:</label>
-      <input name="position" type="text" />
-
-      <!-- <label for="chakras">Chakras:</label>
-      <input name="chakras" type="text"/>
-      
-      <label for="zodiac">Signo del Zodiaco:</label>
-      <input name="zodiac" type="text"/> -->
+      <input name="position" type="text" v-model="form.position" />
     </div>
 
-    <!-- <RouterLink to="/" class="textButton"> -->
-    <button type="submit" onclick="location.href = '/'">AÑADIR</button>
-    <!-- </RouterLink> -->
+    <button type="submit">AÑADIR</button>
   </form>
 </template>
 

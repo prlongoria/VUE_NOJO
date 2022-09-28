@@ -1,26 +1,9 @@
-<!-- composition api -->
-<!-- <script setup>
- import detailComponent from "../detailComponents/detailComponent.vue";
-import { onBeforeMount, ref } from "vue";
-// import DetailComponent from "../detailComponents/detailComponent.vue";
-
-let getStones = ref([]);
-onBeforeMount(async () => {
-  console.log("FUNCIONA");
-
-  getStones.value = await fetch("http://localhost:8080/api/v1/stone/")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      return data;
-    });
-});
-</script> -->
-
 <!-- Api Option: -->
 <script>
 import detailComponent from "../detailComponents/detailComponent.vue";
+import axios from "axios";
 export default {
+  name: "CardsCatalog",
   data() {
     return {
       stones: [],
@@ -34,6 +17,7 @@ export default {
   //     });
   // },
 
+
   methods: {
     async getStones() {
       //método read que en mi caso era created()
@@ -45,72 +29,82 @@ export default {
       }
     },
 
-    async showStones(id) {
-      //método show
-      try {
-        const response = await fetch(
-          `http://localhost:8080/api/v1/stone/show/${stone.id}`,
-          {
-            method: "SHOW",
-          }
-        );
-        this.stones = await response.json();
-      } catch (error) {
-        console.error(error);
-      }
+    deleteStone(id) {
+      axios
+        .delete("http://localhost:8080/api/v1/stone/delete/" + id)
+        .then(alert("Congrats"))
+        .then(location.reload());
     },
 
-    async postStone(stone) {
-      // Método para crear un stone
-      try {
-        const response = await fetch(
-          "http://localhost:8080/api/v1/stone/create",
-          {
-            method: "POST",
-            body: JSON.stringify(stone),
-            headers: { "Content-type": "application/json; charset=UTF-8" },
-          }
-        );
-
-        const stoneCreated = await response.json();
-        this.stones = [...this.stones, stoneCreated];
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    async putStone(stone) {
-      // Método para actualizar un stone
-      try {
-        const response = await fetch(
-          `http://localhost:8080/api/v1/stone/update/${stone.id}`,
-          {
-            method: "PUT",
-            body: JSON.stringify(stone),
-            headers: { "Content-type": "application/json; charset=UTF-8" },
-          }
-        );
-
-        const stoneUpdated = await response.json();
-        this.stones = this.stones.map((u) =>
-          u.id === stone.id ? stoneUpdated : u
-        );
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    async deleteStone(stone) {
-      // Método para borrar un stone
-      try {
-        await fetch(`http://localhost:8080/api/v1/stone/delete/${stone.id}`, {
-          method: "DELETE",
-        });
-
-        this.stones = this.stones.filter((u) => u.id !== stone.id);
-      } catch (error) {
-        console.error(error);
-      }
-    },
+    
   },
+
+  // async showStones(id) {
+  //   //método show
+  //   try {
+  //     const response = await fetch(
+  //       `http://localhost:8080/api/v1/stone/show/${stone.id}`,
+  //       {
+  //         method: "SHOW",
+  //       }
+  //     );
+  //     this.stones = await response.json();
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // },
+
+  // async postStone(stone) {
+  //   // Método para crear un stone
+  //   try {
+  //     const response = await fetch(
+  //       "http://localhost:8080/api/v1/stone/create",
+  //       {
+  //         method: "POST",
+  //         body: JSON.stringify(stone),
+  //         headers: { "Content-type": "application/json; charset=UTF-8" },
+  //       }
+  //     );
+
+  //     const stoneCreated = await response.json();
+  //     this.stones = [...this.stones, stoneCreated];
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // },
+  // async putStone(stone) {
+  //   // Método para actualizar un stone
+  //   try {
+  //     const response = await fetch(
+  //       `http://localhost:8080/api/v1/stone/update/${stone.id}`,
+  //       {
+  //         method: "PUT",
+  //         body: JSON.stringify(stone),
+  //         headers: { "Content-type": "application/json; charset=UTF-8" },
+  //       }
+  //     );
+
+  //     const stoneUpdated = await response.json();
+  //     this.stones = this.stones.map((u) =>
+  //       u.id === stone.id ? stoneUpdated : u
+  //     );
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // },
+  // async deleteStone(stone) {
+  //   // Método para borrar un stone
+  //   try {
+  //     await fetch(`http://localhost:8080/api/v1/stone/delete/${stone.id}`, {
+  //       method: "DELETE",
+  //     });
+
+  //     this.stones = this.stones.filter((u) => u.id !== stone.id);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // },
+
   mounted() {
     this.getStones();
   },
@@ -125,7 +119,7 @@ export default {
       v-for="stone in stones"
       :key="stone.id"
       :stone="stone"
-      @delete-stone="deleteStone"
+      @submit.prevent="deleteStone"
       class="card"
     >
       <div class="imgTitleColor">
@@ -147,32 +141,14 @@ export default {
         <p>{{ stone.attributes }}</p>
       </div>
       <div class="enlaceDetalle">
-        <!-- <RouterLink to="/detail/{{id}}">Ver Más</RouterLink> -->
-        <!-- <RouterLink to="/update/{{id}}" class="textButton">📝</RouterLink>  -->
+        <!-- <RouterLink to="/detail">Ver Más</RouterLink> -->
+        <RouterLink to="/update" class="textButton">📝</RouterLink>
 
         <button class="btn btn-danger ml-2" @click="showStone">Ver Más</button>
 
-        <button
-          class="btn btn-danger ml-2"
-          @click="$emit('delete-stone', stone)"
-        >
-          🗑️
-        </button>
-
-        <button class="btn btn-info" @click="editStone(stone)">
-          ✏️ Editar
-        </button>
-
-        <!-- <detailComponent 
-        :id="stone.id"
-        :name="stone.name"
-        :healing="stone.healing"
-        :attributes="stone.attributes"
-        :color="stone.color"
-        :position="stone.position"
-        :image="stone.image"
+        <!-- <button type="delete" class="btn btn-danger ml-2">🗑️</button> -->
         
-      /> -->
+        <button @click="deleteStone(stone.id)" class="btn btn-danger">🗑️</button>
       </div>
     </div>
   </div>
