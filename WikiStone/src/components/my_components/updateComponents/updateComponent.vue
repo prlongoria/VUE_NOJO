@@ -1,7 +1,64 @@
-<script></script>
+<script>
+import axios from "axios";
+
+export default {
+  name: "updateComponent",
+
+  data() {
+    return {
+      form: {
+        image: "",
+        name: "",
+        color: "",
+        attributes: "",
+        healing: "",
+        position: "",
+      },
+    };
+  },
+  methods: {
+    // async updateStone() {
+    //   const url = "http://localhost:8080/api/v1/stone/update";
+
+    //   const response = await axios.put(url + this.form);
+
+    //   console.log(response);
+    //   this.$router.push("/");
+    // },
+
+    updateStone() {
+      return axios.put(
+        "http://localhost:8080/api/v1/stone/update" + "/stone/update" 
+      );
+    },
+  },
+};
+</script>
 
 <template>
-  <div>
+  <div class="imgTitleColor">
+    <div class="card__image-holder">
+      <img class="card__image" :src="stone.image" alt="stone" />
+    </div>
+    <div id="titleColor">
+      <div class="card-title">
+        <h1 class="stoneName">{{ stone.name }}</h1>
+      </div>
+      <div class="card-color">
+        <h2 id="colorStone">Color:</h2>
+        <p>{{ stone.color }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-attributes">
+    <h2 id="stoneAttributes">Atributos:</h2>
+    <p>{{ stone.attributes }}</p>
+  </div>
+  <div class="enlaceDetalle">
+    <button @click="updateStone" class="btn btn-danger">ACTUALIZAR</button>
+  </div>
+
+  <!-- <div>
     <h1 id="titleUpdate">UPDATE PAGE</h1>
     <img
       src="../../../images/Cuarzo_rosa.jpg"
@@ -78,9 +135,9 @@
             </button>
           </td>
         </tr>
-      </tbody>
+      </tbody> -->
 
-      <!-- <p>Nombre: </p>
+  <!-- <p>Nombre: </p>
     <p>Color: Rosa</p>
     <p>
       Atributos: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim.
@@ -104,10 +161,10 @@
       amet aliquam.
     </p>
     <p>Posición:Pellentesque eget scelerisque augue.</p> -->
-      <!-- <p>Chakras:Pellentesque eget scelerisque augue.</p>
+  <!-- <p>Chakras:Pellentesque eget scelerisque augue.</p>
     <p>Signo del Zodíaco:Pellentesque eget scelerisque augue.</p> -->
-    </table>
-  </form>
+  <!-- </table>
+  </form> -->
 </template>
 
 <style lang="css" scoped>

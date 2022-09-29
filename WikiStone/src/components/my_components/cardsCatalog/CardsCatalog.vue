@@ -17,7 +17,6 @@ export default {
   //     });
   // },
 
-
   methods: {
     async getStones() {
       //método read que en mi caso era created()
@@ -32,11 +31,21 @@ export default {
     deleteStone(id) {
       axios
         .delete("http://localhost:8080/api/v1/stone/delete/" + id)
-        .then(alert("Congrats"))
+        .then(alert("Has eliminado la piedra"))
         .then(location.reload());
     },
 
-    
+    // showStone(id) {
+    //   axios.get("http://localhost:8080/api/v1/stone/show/" + id);
+    //    .then(alert("Has eliminado la piedra"))
+    //    .then(location.reload());
+    // },
+
+    showStone(id) {
+      return axios.get(
+        "http://localhost:8080/api/v1/stone/show/" + `/stone/${id}`
+      );
+    },
   },
 
   // async showStones(id) {
@@ -145,10 +154,9 @@ export default {
         <RouterLink to="/update" class="textButton">📝</RouterLink>
 
         <button class="btn btn-danger ml-2" @click="showStone">Ver Más</button>
-
-        <!-- <button type="delete" class="btn btn-danger ml-2">🗑️</button> -->
-        
-        <button @click="deleteStone(stone.id)" class="btn btn-danger">🗑️</button>
+        <button @click="deleteStone(stone.id)" class="btn btn-danger">
+          🗑️
+        </button>
       </div>
     </div>
   </div>

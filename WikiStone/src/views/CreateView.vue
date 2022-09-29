@@ -8,8 +8,8 @@ import AddButton from "../components/my_components/createComponents/addButton.vu
   <div class="createView">
     <CreateComponent />
   </div>
-  <AddButton />
-  <CancelButton />
+  <!-- <AddButton />
+  <CancelButton /> -->
 </template>
 
 <style lang="css" scoped></style>
