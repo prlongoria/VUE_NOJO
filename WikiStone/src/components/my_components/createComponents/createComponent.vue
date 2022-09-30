@@ -83,7 +83,7 @@ export default {
         <input name="position" type="text" v-model="form.position" />
       </p>
     </div>
-    <button type="submit" id="addButton">AÑADIR</button>
+    <button type="submit" id="addButton">Añadir</button>
     <button type="reset" @toggle-off="resetForm" id="cancelButton">
       Cancelar
     </button>
@@ -111,8 +111,6 @@ input {
 }
 p {
   background-color: white;
-  /* border: 0.25vw solid black; */
-  height: auto;
   padding: 1vw;
   text-align: justify;
   margin-bottom: 2vw;

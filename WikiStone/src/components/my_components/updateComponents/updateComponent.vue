@@ -16,21 +16,24 @@ export default {
       },
     };
   },
-  methods: {
-    // async updateStone() {
-    //   const url = "http://localhost:8080/api/v1/stone/update";
 
-    //   const response = await axios.put(url + this.form);
+  methods: {
+    //  updateStone() {
+    //   const url = "http://localhost:8080/api/v1/stone/update/{id}";
+
+    //   const response =  axios.put(url + this.form);
 
     //   console.log(response);
     //   this.$router.push("/");
     // },
 
-    updateStone() {
+    updateStone(id) {
       return axios.put(
-        "http://localhost:8080/api/v1/stone/update" + "/stone/update" 
+        "http://localhost:8080/api/v1/stone/update + id" 
       );
     },
+
+
   },
 };
 </script>

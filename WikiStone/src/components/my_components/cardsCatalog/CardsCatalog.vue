@@ -9,17 +9,10 @@ export default {
       stones: [],
     };
   },
-  // created() {
-  //   fetch("http://localhost:8080/api/v1/stone/")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       this.stones = data;
-  //     });
-  // },
-
+  
   methods: {
     async getStones() {
-      //método read que en mi caso era created()
+      //método read que en mi caso 
       try {
         const response = await fetch("http://localhost:8080/api/v1/stone/");
         this.stones = await response.json();
@@ -37,15 +30,14 @@ export default {
 
     // showStone(id) {
     //   axios.get("http://localhost:8080/api/v1/stone/show/" + id);
-    //    .then(alert("Has eliminado la piedra"))
     //    .then(location.reload());
     // },
 
-    showStone(id) {
-      return axios.get(
-        "http://localhost:8080/api/v1/stone/show/" + `/stone/${id}`
-      );
-    },
+    // showStone(id) {
+    //   return axios.get(
+    //     "http://localhost:8080/api/v1/stone/show/" + `/stone/${id}`
+    //   );
+    // },
   },
 
   // async showStones(id) {
@@ -63,24 +55,7 @@ export default {
   //   }
   // },
 
-  // async postStone(stone) {
-  //   // Método para crear un stone
-  //   try {
-  //     const response = await fetch(
-  //       "http://localhost:8080/api/v1/stone/create",
-  //       {
-  //         method: "POST",
-  //         body: JSON.stringify(stone),
-  //         headers: { "Content-type": "application/json; charset=UTF-8" },
-  //       }
-  //     );
-
-  //     const stoneCreated = await response.json();
-  //     this.stones = [...this.stones, stoneCreated];
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // },
+  
   // async putStone(stone) {
   //   // Método para actualizar un stone
   //   try {
@@ -101,18 +76,7 @@ export default {
   //     console.error(error);
   //   }
   // },
-  // async deleteStone(stone) {
-  //   // Método para borrar un stone
-  //   try {
-  //     await fetch(`http://localhost:8080/api/v1/stone/delete/${stone.id}`, {
-  //       method: "DELETE",
-  //     });
-
-  //     this.stones = this.stones.filter((u) => u.id !== stone.id);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // },
+  
 
   mounted() {
     this.getStones();
