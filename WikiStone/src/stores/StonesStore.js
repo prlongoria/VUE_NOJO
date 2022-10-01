@@ -1,13 +1,14 @@
 // import { defineStore } from "pinia";
 // //import dataStoneFake from "./dataStoneFake.json";
-// export const useStonesStore = defineStore("StonesStore", {
-//   // state: () => {
-//   //   return {
-//   //     stones: dataStoneFake.stones,
-//   //   };
-//   // },
+// //export const useStonesStore = defineStore("StonesStore", {
+// // state: () => {
+// //   return {
+// //     stones: dataStoneFake.stones,
+// //   };
+// // },
 
-//   //ESTO LO DEJO PARA CUANDO HAGA EN JAVA MI API Y TENGA QUE CONSUMIRLA DESDE AQUÍ, BORRO  EL STATE DE ARRIBA Y ME QUEDO CON TODO LO QUE SIGUE A ESTA LÍNEA:
+// //   //ESTO LO DEJO PARA CUANDO HAGA EN JAVA MI API Y TENGA QUE CONSUMIRLA DESDE AQUÍ, BORRO  EL STATE DE ARRIBA Y ME QUEDO CON TODO LO QUE SIGUE A ESTA LÍNEA:
+// export const stonesStore = defineStore("StonesStore", {
 //   state: () => ({
 //     stones: [],
 //   }),

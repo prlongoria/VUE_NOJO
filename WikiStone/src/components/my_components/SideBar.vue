@@ -11,18 +11,7 @@ export default {};
       <br />
       <RouterLink to="/update">UpdateView</RouterLink>
     </nav>
-    <!-- <div class="sidebar-header">
-      <span>UserName</span>
-    </div>
-    <div class="sidebar-nav">
-      <router-link to="/" class="nav-button text">Home</router-link>
-    </div> -->
-    <!-- <div @click="toggleModal" class="sidebar-footer text">
-      <span>Cart</span>
-      <Modal v-model="showCartModal" :title="'Cart'">
-        <p>{{ handledTotal }}</p>
-      </Modal>
-    </div> -->
+    
   </div>
 </template>
 
@@ -34,10 +23,27 @@ export default {};
   font-size: 2vw;
   background-color: var(--primary-color);
   margin: 1vw;
+  color: whitesmoke;
 }
+
+@media all and (max-width: 840px) {
+  #sidebar {
+  display: block;
+  flex-direction: column;
+  width: 12vw;
+  font-size: 2vw;
+  background-color: var(--primary-color);
+  margin: 1vw;
+  color: whitesmoke;
+}
+}
+
 h1 {
   font-size: 3vw;
 }
+
+
+
 /* .sidebar-header {
   display: flex;
   justify-content: center;

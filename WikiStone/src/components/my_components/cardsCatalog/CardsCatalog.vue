@@ -9,10 +9,10 @@ export default {
       stones: [],
     };
   },
-  
+
   methods: {
     async getStones() {
-      //método read que en mi caso 
+      //método read que en mi caso
       try {
         const response = await fetch("http://localhost:8080/api/v1/stone/");
         this.stones = await response.json();
@@ -22,22 +22,20 @@ export default {
     },
 
     deleteStone(id) {
-      axios
-        .delete("http://localhost:8080/api/v1/stone/delete/" + id)
-        .then(alert("Has eliminado la piedra"))
-        .then(location.reload());
+      axios.delete("http://localhost:8080/api/v1/stone/delete/" + id);
+      if (confirm("¿Estás seguro de eliminar esta piedra?")) {
+        // .then(alert("Has eliminado la piedra"))
+        // .then(location.reload());
+        alert("Has eliminado la piedra");
+        location.reload();
+      }
     },
 
-    // showStone(id) {
-    //   axios.get("http://localhost:8080/api/v1/stone/show/" + id);
-    //    .then(location.reload());
-    // },
-
-    // showStone(id) {
-    //   return axios.get(
-    //     "http://localhost:8080/api/v1/stone/show/" + `/stone/${id}`
-    //   );
-    // },
+    showStone(id) {
+      axios
+        .get("http://localhost:8080/api/v1/stone/show/" + id)
+        .then((response) => (this.stones = response.data));
+    },
   },
 
   // async showStones(id) {
@@ -55,7 +53,6 @@ export default {
   //   }
   // },
 
-  
   // async putStone(stone) {
   //   // Método para actualizar un stone
   //   try {
@@ -76,7 +73,6 @@ export default {
   //     console.error(error);
   //   }
   // },
-  
 
   mounted() {
     this.getStones();
@@ -101,7 +97,8 @@ export default {
         </div>
         <div id="titleColor">
           <div class="card-title">
-            <h1 class="stoneName">{{ stone.name }}</h1>
+            <h2 id="colorStone">Nombre:</h2>
+            <p>{{ stone.name }}</p>
           </div>
           <div class="card-color">
             <h2 id="colorStone">Color:</h2>
@@ -114,13 +111,13 @@ export default {
         <p>{{ stone.attributes }}</p>
       </div>
       <div class="enlaceDetalle">
-        <!-- <RouterLink to="/detail">Ver Más</RouterLink> -->
-        <RouterLink to="/update" class="textButton">📝</RouterLink>
-
         <button class="btn btn-danger ml-2" @click="showStone">Ver Más</button>
+        <button class="btn btn-danger ml-2" @click="editStone">📝</button>
         <button @click="deleteStone(stone.id)" class="btn btn-danger">
           🗑️
         </button>
+        <!-- <RouterLink to="/detail">Ver Más</RouterLink> -->
+        <!-- <RouterLink to="/update" class="textButton">📝</RouterLink> -->  
       </div>
     </div>
   </div>
@@ -144,9 +141,9 @@ export default {
   background-color: white;
   text-align: justify;
   overflow-y: auto;
-  /* height: 30vw; */
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .card__image-holder {
@@ -156,6 +153,7 @@ export default {
 
 .imgTitleColor {
   display: flex;
+  width: 100%;
 }
 .card-attributes {
   align-self: flex-start;
