@@ -25,15 +25,15 @@ export default {
     // axios.put(`http://localhost:8080/api/v1/stone/update/${stone.id}`, this.form);
     // },
 
-    async updateStone() {
-      await apiStones.updateStone(this.form);
+//     async updateStone() {
+//       await apiStones.updateStone(this.form);
 
-      alert(`${this.stone.name} ha sido actualizado`);
-      location.reload();
-    },
-  },
-};
-</script>
+//       alert(`${this.stone.name} ha sido actualizado`);
+//       location.reload();
+//     },
+//   },
+// };
+// </script>
 
 <template>
   <div class="modal-overlay" v-if="showModal">

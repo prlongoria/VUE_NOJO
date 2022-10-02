@@ -2,13 +2,22 @@
 <script>
 // import apiStones from "../../../services/apiStones.js"; GUILLE
 // import EditStone from "../UpdateComponents/EditStone.vue"; GUILLE
- 
+
 import axios from "axios";
 export default {
   name: "CardsCatalog",
   data() {
     return {
       stones: [],
+      // stone: {
+      //   id: "",
+      //   name: "",
+      //   color: "",
+      //   attributes: "",
+      //   position: "",
+      //   healing: "",
+      //   image: "",
+      // },
     };
   },
 
@@ -23,19 +32,9 @@ export default {
       }
     },
 
-    // async getStones() {
-    //   const data = await apiStones.getStones();
-
-    //   const stonesData = data.data;
-
-    //   this.stones = stonesData;
-    // }, GUILLE
-
     deleteStone(id) {
       axios.delete("http://localhost:8080/api/v1/stone/delete/" + id);
       if (confirm("¿Estás seguro de eliminar esta piedra?")) {
-        // .then(alert("Has eliminado la piedra"))
-        // .then(location.reload());
         alert("Has eliminado la piedra");
         location.reload();
       }
@@ -49,52 +48,48 @@ export default {
           this.stones = response;
         });
     },
+
+    // async showStones(id) {
+    //   //método show
+    //   try {
+    //     const response = await fetch(
+    //       `http://localhost:8080/api/v1/stone/show/${stone.id}`,
+    //       {
+    //         method: "SHOW",
+    //       }
+    //     );
+    //     this.stones = await response.json();
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // },
+
+    async updateStone(stone) {
+      // Método para actualizar un stone
+      try {
+        await fetch("http://127.0.0.1:8080/api/v1/stone/update/" + stone.id, {
+          method: "PUT",
+          body: JSON.stringify(stone),
+          headers: { "Content-type": "application/json; charset=UTF-8" },
+        });
+
+        //     const stoneUpdated = await response.json();
+        //     this.stones = this.stones.map((u) =>
+        //       u.id === stone.id ? stoneUpdated : u
+        //     );
+      } catch (error) {
+        console.error(error);
+      }
+      location.reload();
+    },
   },
-
-  // async showStones(id) {
-  //   //método show
-  //   try {
-  //     const response = await fetch(
-  //       `http://localhost:8080/api/v1/stone/show/${stone.id}`,
-  //       {
-  //         method: "SHOW",
-  //       }
-  //     );
-  //     this.stones = await response.json();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // },
-
-  // async putStone(stone) {
-  //   // Método para actualizar un stone
-  //   try {
-  //     const response = await fetch(
-  //       `http://localhost:8080/api/v1/stone/update/${stone.id}`,
-  //       {
-  //         method: "PUT",
-  //         body: JSON.stringify(stone),
-  //         headers: { "Content-type": "application/json; charset=UTF-8" },
-  //       }
-  //     );
-
-  //     const stoneUpdated = await response.json();
-  //     this.stones = this.stones.map((u) =>
-  //       u.id === stone.id ? stoneUpdated : u
-  //     );
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // },
-
   mounted() {
     this.getStones();
   },
 
   //components: detailComponent,
 
-//components: { EditStone }, GUILLE
-
+  //components: { EditStone }, GUILLE
 };
 </script>
 
@@ -104,7 +99,6 @@ export default {
       v-for="(stone, index) in stones"
       :key="index"
       :stone="stone"
-      @submit.prevent="deleteStone"
       class="card"
     >
       <div class="imgTitleColor">
@@ -132,9 +126,93 @@ export default {
         <button @click="deleteStone(stone.id)" class="btn btn-danger">
           🗑️
         </button>
-        <div><EditStone :stone="stone" /></div>
+        <!-- <div><EditStone :stone="stone" /></div> -->
         <!-- <RouterLink to="/detail">Ver Más</RouterLink> -->
         <!-- <RouterLink to="/update" class="textButton">📝</RouterLink> -->
+
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          :data-bs-target="'#updateModal' + stone.id"
+        >
+          Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          :id="'updateModal' + stone.id"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form @submit.prevent="updateStone(stone)">
+                  <div class="createView">
+                    <p>
+                      <label for="image">Imagen: </label>
+                      <input type="text" v-model="stone.image" />
+                    </p>
+
+                    <p>
+                      <label for="name">Nombre: </label>
+                      <input type="text" v-model="stone.name" />
+                    </p>
+
+                    <p>
+                      <label for="color">Color: </label>
+                      <input type="text" v-model="stone.color" />
+                    </p>
+
+                    <p>
+                      <label for="attributes">Atributos: </label>
+                      <input type="text" v-model="stone.attributes" />
+                    </p>
+
+                    <p>
+                      <label for="healing">Sanación: </label>
+                      <input type="text" v-model="stone.healing" />
+                    </p>
+
+                    <p>
+                      <label for="position">Posición: </label>
+                      <input type="text" v-model="stone.position" />
+                    </p>
+                  </div>
+
+                  <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+
+                  <div class="modal-footer">
+                    <button type="submit" id="addButton">Actualizar</button>
+                    <button
+                      type="reset"
+                      @toggle-off="resetForm"
+                      id="cancelButton"
+                    >
+                      Cancelar
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
