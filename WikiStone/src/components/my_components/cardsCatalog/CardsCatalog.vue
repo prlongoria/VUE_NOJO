@@ -2,7 +2,7 @@
 <script>
 // import apiStones from "../../../services/apiStones.js"; GUILLE
 // import EditStone from "../UpdateComponents/EditStone.vue"; GUILLE
-
+import DetailComponent from "../DetailComponents/detailComponent.vue";
 import axios from "axios";
 export default {
   name: "CardsCatalog",
@@ -87,7 +87,7 @@ export default {
     this.getStones();
   },
 
-  //components: detailComponent,
+  components: { DetailComponent },
 
   //components: { EditStone }, GUILLE
 };
@@ -121,7 +121,7 @@ export default {
         <p>{{ stone.attributes }}</p>
       </div>
       <div class="enlaceDetalle">
-        <button class="btn btn-danger ml-2" @click="showStone">Ver Más</button>
+        <button class="btn btn-danger ml-2">Ver Más</button>
         <button class="btn btn-danger ml-2" @click="updateStone">📝</button>
         <button @click="deleteStone(stone.id)" class="btn btn-danger">
           🗑️
@@ -130,7 +130,107 @@ export default {
         <!-- <RouterLink to="/detail">Ver Más</RouterLink> -->
         <!-- <RouterLink to="/update" class="textButton">📝</RouterLink> -->
 
-        <!-- Button trigger modal -->
+        <!-- Button trigger modal SHOW-->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="createView">
+                    <p>
+                      <label for="image">Imagen: </label>
+                      <input name="image" type="text" v-model="stone.image" />
+                    </p>
+
+                    <p>
+                      <label for="name">Nombre: </label>
+                      <input name="name" type="text" v-model="stone.name" />
+                    </p>
+
+                    <p>
+                      <label for="color">Color: </label>
+                      <input name="color" type="text" v-model="stone.color" />
+                    </p>
+
+                    <p>
+                      <label for="attributes">Atributos: </label>
+                      <input
+                        name="attributes"
+                        type="text"
+                        v-model="stone.attributes"
+                      />
+                    </p>
+
+                    <p>
+                      <label for="healing">Sanación: </label>
+                      <input
+                        name="healing"
+                        type="text"
+                        v-model="stone.healing"
+                      />
+                    </p>
+
+                    <p>
+                      <label for="position">Posición: </label>
+                      <input
+                        name="position"
+                        type="text"
+                        v-model="stone.position"
+                      />
+                    </p>
+                  </div>
+                  <button type="submit" id="addButton">Añadir</button>
+                  <button
+                    type="reset"
+                    @toggle-off="resetForm"
+                    id="cancelButton"
+                  >
+                    Cancelar
+                  </button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button trigger modal UPDATE-->
         <button
           type="button"
           class="btn btn-primary"
