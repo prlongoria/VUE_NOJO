@@ -13,7 +13,7 @@ import AddStoneButton from "../components/my_components/AddStoneButton.vue";
 
     <CardsCatalog />
 
-    <SideBarVue></SideBarVue>
+    <!-- <SideBarVue></SideBarVue> -->
 
   </main>
 

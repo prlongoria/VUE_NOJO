@@ -1,19 +1,4 @@
 <script>
-//Esto lo hice para probar a que cambie la situación de la página donde esté:
-// export default {
-//   name: "footerView",
-//   data() {
-//     return {
-//       pages: {
-//         home: "Página de Inicio",
-//         DetailView: "Página detalle",
-//       },
-//     };
-//   },
-//   mounted() {
-//     console.log(this.$route);
-//   },
-// };
 </script>
 
 <template>

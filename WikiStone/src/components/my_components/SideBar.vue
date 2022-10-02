@@ -11,7 +11,6 @@ export default {};
       <br />
       <RouterLink to="/update">UpdateView</RouterLink>
     </nav>
-    
   </div>
 </template>
 
@@ -28,65 +27,18 @@ export default {};
 
 @media all and (max-width: 840px) {
   #sidebar {
-  display: block;
-  flex-direction: column;
-  width: 12vw;
-  font-size: 2vw;
-  background-color: var(--primary-color);
-  margin: 1vw;
-  color: whitesmoke;
-}
+    display: block;
+    flex-direction: column;
+    width: 12vw;
+    font-size: 2vw;
+    background-color: var(--primary-color);
+    margin: 1vw;
+    color: whitesmoke;
+  }
 }
 
 h1 {
   font-size: 3vw;
 }
 
-
-
-/* .sidebar-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vw;
-  
-  text-transform: uppercase;
-  
-}
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.sidebar-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vw;
-  cursor: pointer;
-  
-}
-.nav-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  padding: 1rem;
-  
-  transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
-  cursor: pointer;
-  user-select: none;
-  
-  text-align: center;
-  text-decoration: none;
-}
-.nav-button:hover {
-  color: var(--secondary-color);
-  
-}
-.text {
-  
-  text-transform: uppercase;
-  color: var(--secondary-color);
-}  */
 </style>

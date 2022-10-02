@@ -18,7 +18,7 @@ export default {
   },
 
   methods: { -->
-    <!-- //  updateStone() {
+<!-- //  updateStone() {
     //   const url = "http://localhost:8080/api/v1/stone/update/{id}";
 
     //   const response =  axios.put(url + this.form);
@@ -38,30 +38,50 @@ export default {
 // };
 // </script> -->
 
-// <template>
-//   <div class="imgTitleColor">
-//     <div class="card__image-holder">
-//       <img class="card__image" :src="stone.image" alt="stone" />
-//     </div>
-//     <div id="titleColor">
-//       <div class="card-title">
-//         <h1 class="stoneName">{{ stone.name }}</h1>
-//       </div>
-//       <div class="card-color">
-//         <h2 id="colorStone">Color:</h2>
-//         <p>{{ stone.color }}</p>
-//       </div>
-//     </div>
-//   </div>
-//   <div class="card-attributes">
-//     <h2 id="stoneAttributes">Atributos:</h2>
-//     <p>{{ stone.attributes }}</p>
-//   </div>
-//   <div class="enlaceDetalle">
-//     <button @click="updateStone" class="btn btn-danger">ACTUALIZAR</button>
-//   </div>
+//
+<template>
+  //
+  <div class="imgTitleColor">
+    //
+    <div class="card__image-holder">
+      // <img class="card__image" :src="stone.image" alt="stone" /> //
+    </div>
+    //
+    <div id="titleColor">
+      //
+      <div class="card-title">
+        //
+        <h1 class="stoneName">{{ stone.name }}</h1>
+        //
+      </div>
+      //
+      <div class="card-color">
+        //
+        <h2 id="colorStone">Color:</h2>
+        //
+        <p>{{ stone.color }}</p>
+        //
+      </div>
+      //
+    </div>
+    //
+  </div>
+  //
+  <div class="card-attributes">
+    //
+    <h2 id="stoneAttributes">Atributos:</h2>
+    //
+    <p>{{ stone.attributes }}</p>
+    //
+  </div>
+  //
+  <div class="enlaceDetalle">
+    //
+    <button @click="updateStone" class="btn btn-danger">ACTUALIZAR</button> //
+  </div>
 
-  // <!-- <div>
+  //
+  <!-- <div>
   //   <h1 id="titleUpdate">UPDATE PAGE</h1>
   //   <img
   //     src="../../../images/Cuarzo_rosa.jpg"
@@ -140,7 +160,8 @@ export default {
   //       </tr>
   //     </tbody> -->
 
-//   <!-- <p>Nombre: </p>
+  //
+  <!-- <p>Nombre: </p>
 //     <p>Color: Rosa</p>
 //     <p>
 //       Atributos: Pellentesque eget scelerisque augue. Fusce vitae aliquam enim.
@@ -164,11 +185,14 @@ export default {
 //       amet aliquam.
 //     </p>
 //     <p>Posición:Pellentesque eget scelerisque augue.</p> -->
-//   <!-- <p>Chakras:Pellentesque eget scelerisque augue.</p>
+  //
+  <!-- <p>Chakras:Pellentesque eget scelerisque augue.</p>
 //     <p>Signo del Zodíaco:Pellentesque eget scelerisque augue.</p> -->
-//   <!-- </table>
+  //
+  <!-- </table>
 //   </form> -->
-// </template>
+  //
+</template>
 
 <style lang="css" scoped>
 p {

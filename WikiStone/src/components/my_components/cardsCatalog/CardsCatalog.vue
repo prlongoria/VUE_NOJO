@@ -1,6 +1,8 @@
 <!-- Api Option: -->
 <script>
-import detailComponent from "../detailComponents/detailComponent.vue";
+// import apiStones from "../../../services/apiStones.js"; GUILLE
+// import EditStone from "../UpdateComponents/EditStone.vue"; GUILLE
+ 
 import axios from "axios";
 export default {
   name: "CardsCatalog",
@@ -21,6 +23,14 @@ export default {
       }
     },
 
+    // async getStones() {
+    //   const data = await apiStones.getStones();
+
+    //   const stonesData = data.data;
+
+    //   this.stones = stonesData;
+    // }, GUILLE
+
     deleteStone(id) {
       axios.delete("http://localhost:8080/api/v1/stone/delete/" + id);
       if (confirm("¿Estás seguro de eliminar esta piedra?")) {
@@ -34,7 +44,10 @@ export default {
     showStone(id) {
       axios
         .get("http://localhost:8080/api/v1/stone/show/" + id)
-        .then((response) => (this.stones = response.data));
+        .then((response) => response.json())
+        .then((response) => {
+          this.stones = response;
+        });
     },
   },
 
@@ -78,15 +91,18 @@ export default {
     this.getStones();
   },
 
-  components: detailComponent,
+  //components: detailComponent,
+
+//components: { EditStone }, GUILLE
+
 };
 </script>
 
 <template>
   <div class="panelCatalogCards">
     <div
-      v-for="stone in stones"
-      :key="stone.id"
+      v-for="(stone, index) in stones"
+      :key="index"
       :stone="stone"
       @submit.prevent="deleteStone"
       class="card"
@@ -112,12 +128,13 @@ export default {
       </div>
       <div class="enlaceDetalle">
         <button class="btn btn-danger ml-2" @click="showStone">Ver Más</button>
-        <button class="btn btn-danger ml-2" @click="editStone">📝</button>
+        <button class="btn btn-danger ml-2" @click="updateStone">📝</button>
         <button @click="deleteStone(stone.id)" class="btn btn-danger">
           🗑️
         </button>
+        <div><EditStone :stone="stone" /></div>
         <!-- <RouterLink to="/detail">Ver Más</RouterLink> -->
-        <!-- <RouterLink to="/update" class="textButton">📝</RouterLink> -->  
+        <!-- <RouterLink to="/update" class="textButton">📝</RouterLink> -->
       </div>
     </div>
   </div>
@@ -127,7 +144,7 @@ export default {
 .panelCatalogCards {
   background-color: #ebf1f4;
   margin: 1vw;
-  width: 82vw;
+  width: 100%;
   border: 0.2vw solid black;
   height: 100vh;
   overflow-y: auto;
