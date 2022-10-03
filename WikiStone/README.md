@@ -5,11 +5,7 @@
 <div align="center"><img src="https://user-images.githubusercontent.com/104829537/193504696-6c8c547f-3e52-4da1-b98f-16ae0f543215.jpg " height="200" width="200"></div>
 
 
-1.- Arrancar mySQL en xampp
-2.- Arrancar el servidor del back en intelliJ
-3.- npm run dev para arrancar el servidor del front
 
-Y ya puedes ver la aplicación
 
 # Wikipiedra
 
