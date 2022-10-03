@@ -121,11 +121,9 @@ export default {
         <p>{{ stone.attributes }}</p>
       </div>
       <div class="enlaceDetalle">
-        <button class="btn btn-danger ml-2">Ver Más</button>
-        <button class="btn btn-danger ml-2" @click="updateStone">📝</button>
-        <button @click="deleteStone(stone.id)" class="btn btn-danger">
-          🗑️
-        </button>
+        <!-- <button class="btn btn-danger ml-2">Ver Más</button>
+        <button class="btn btn-danger ml-2" @click="updateStone">📝</button> -->
+        <button @click="deleteStone(stone.id)">🗑️</button>
         <!-- <div><EditStone :stone="stone" /></div> -->
         <!-- <RouterLink to="/detail">Ver Más</RouterLink> -->
         <!-- <RouterLink to="/update" class="textButton">📝</RouterLink> -->
@@ -133,17 +131,16 @@ export default {
         <!-- Button trigger modal SHOW-->
         <button
           type="button"
-          class="btn btn-primary"
           data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
+          :data-bs-target="'#showModal' + stone.id"
         >
-          Launch demo modal
+          Ver Más
         </button>
 
         <!-- Modal -->
         <div
           class="modal fade"
-          id="exampleModal"
+          :id="'showModal' + stone.id"
           tabindex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -220,11 +217,9 @@ export default {
                   class="btn btn-secondary"
                   data-bs-dismiss="modal"
                 >
-                  Close
+                  Cerrar
                 </button>
-                <button type="button" class="btn btn-primary">
-                  Save changes
-                </button>
+                <button type="button" class="btn btn-primary">Borrar</button>
               </div>
             </div>
           </div>
@@ -233,11 +228,10 @@ export default {
         <!-- Button trigger modal UPDATE-->
         <button
           type="button"
-          class="btn btn-primary"
           data-bs-toggle="modal"
           :data-bs-target="'#updateModal' + stone.id"
         >
-          Launch demo modal
+          Editar 📝
         </button>
 
         <!-- Modal -->
@@ -364,5 +358,48 @@ export default {
 }
 #titleColor {
   align-self: center;
+}
+
+#cancelButton {
+  background-color: #849597;
+  width: auto;
+  margin: 1vw;
+  border-radius: 45vw;
+  color: white;
+}
+#addButton {
+  background-color: #849597;
+  width: auto;
+  margin: 1vw;
+  border-radius: 45vw;
+  color: white;
+}
+input {
+  border: none;
+  width: 100%;
+}
+p {
+  background-color: white;
+  padding: 1vw;
+  text-align: justify;
+  margin-bottom: 2vw;
+}
+#createImage {
+  padding: 15vw;
+  margin-bottom: -10vw;
+}
+#titleCreate {
+  color: black;
+  font-size: 5vw;
+  margin-bottom: -15vw;
+}
+.createView {
+  color: black;
+  background-color: #ebf1f4;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 3vw;
+  margin: 2vw;
+  margin-bottom: 0vw;
 }
 </style>
