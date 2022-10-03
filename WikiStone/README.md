@@ -62,11 +62,11 @@ Stack:
 
 | Color  Pallete           | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-|  Color | ![#D4D1B1](https://via.placeholder.com/10/0a192f?text=+) #D4D1B1 |
-|  Color | ![#EBF1F4](https://via.placeholder.com/10/f8f8f8?text=+) #EBF1F4 |
-|  Color | ![#849597](https://via.placeholder.com/10/00b48a?text=+) #849597 |
-|  Color | ![#CE918D](https://via.placeholder.com/10/00b48a?text=+) #CE918D |
-|  Color | ![#8E4F5D](https://via.placeholder.com/10/00b48a?text=+) #8E4F5D |
+|  Color |  #D4D1B1 |
+|  Color |  #EBF1F4 |
+|  Color |  #849597 |
+|  Color |  #CE918D |
+|  Color |  #8E4F5D |
 
 
 ## Figma
