@@ -7,7 +7,7 @@
 
 
 
-# Wikipiedra
+# 
 
 Este es mi primer proyecto personal con front y back, se trata de una Wiki sobre las piedras y su múltiples propiedades, ya sean curativas o energéticas. 
 Esta aplicación irá creciendo con el tiempo, poco a poco iré añadiendo más piedras y más información sobre cómo cuidarlas, limpiarlas o cargarlas, incluso añadiré algunos rituales para hacer con ellas.
