@@ -26,7 +26,7 @@
 #introduction {
   background-color: white;
   margin: 1vw;
-  border: 0.1vw solid black;
+  /* border: 0.1vw solid black; */
   height: auto;
   text-align: justify;
   padding: 1vw;

@@ -260,7 +260,7 @@ export default {
   background-color: #ebf1f4;
   margin: 1vw;
   width: 100%;
-  border: 0.2vw solid black;
+  /* border: 0.2vw solid black; */
   height: 100vh;
   overflow-y: auto;
   display: flex;
@@ -268,8 +268,8 @@ export default {
 }
 .card {
   padding: 1vw;
-  margin: 0.5vw;
-  border: 0.2vw solid black;
+  margin: 2vw;
+  /* border: 0.2vw solid black; */
   background-color: white;
   text-align: justify;
   overflow-y: auto;
