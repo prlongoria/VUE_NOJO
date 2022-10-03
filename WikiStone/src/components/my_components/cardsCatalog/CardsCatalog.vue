@@ -1,29 +1,17 @@
 <!-- Api Option: -->
 <script>
-// import apiStones from "../../../services/apiStones.js"; GUILLE
-// import EditStone from "../UpdateComponents/EditStone.vue"; GUILLE
-import DetailComponent from "../DetailComponents/detailComponent.vue";
 import axios from "axios";
 export default {
   name: "CardsCatalog",
   data() {
     return {
       stones: [],
-      // stone: {
-      //   id: "",
-      //   name: "",
-      //   color: "",
-      //   attributes: "",
-      //   position: "",
-      //   healing: "",
-      //   image: "",
-      // },
     };
   },
 
   methods: {
     async getStones() {
-      //método read que en mi caso
+      //método read
       try {
         const response = await fetch("http://localhost:8080/api/v1/stone/");
         this.stones = await response.json();
@@ -49,21 +37,6 @@ export default {
         });
     },
 
-    // async showStones(id) {
-    //   //método show
-    //   try {
-    //     const response = await fetch(
-    //       `http://localhost:8080/api/v1/stone/show/${stone.id}`,
-    //       {
-    //         method: "SHOW",
-    //       }
-    //     );
-    //     this.stones = await response.json();
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // },
-
     async updateStone(stone) {
       // Método para actualizar un stone
       try {
@@ -72,11 +45,6 @@ export default {
           body: JSON.stringify(stone),
           headers: { "Content-type": "application/json; charset=UTF-8" },
         });
-
-        //     const stoneUpdated = await response.json();
-        //     this.stones = this.stones.map((u) =>
-        //       u.id === stone.id ? stoneUpdated : u
-        //     );
       } catch (error) {
         console.error(error);
       }
@@ -87,9 +55,7 @@ export default {
     this.getStones();
   },
 
-  components: { DetailComponent },
 
-  //components: { EditStone }, GUILLE
 };
 </script>
 
@@ -121,12 +87,7 @@ export default {
         <p>{{ stone.attributes }}</p>
       </div>
       <div class="enlaceDetalle">
-        <!-- <button class="btn btn-danger ml-2">Ver Más</button>
-        <button class="btn btn-danger ml-2" @click="updateStone">📝</button> -->
         <button @click="deleteStone(stone.id)">🗑️</button>
-        <!-- <div><EditStone :stone="stone" /></div> -->
-        <!-- <RouterLink to="/detail">Ver Más</RouterLink> -->
-        <!-- <RouterLink to="/update" class="textButton">📝</RouterLink> -->
 
         <!-- Button trigger modal SHOW-->
         <button
@@ -201,25 +162,12 @@ export default {
                       />
                     </p>
                   </div>
-                  <button type="submit" id="addButton">Añadir</button>
-                  <button
-                    type="reset"
-                    @toggle-off="resetForm"
-                    id="cancelButton"
-                  >
-                    Cancelar
-                  </button>
                 </form>
               </div>
               <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Cerrar
+                <button data-bs-dismiss="modal" id="cancelButton">
+                  Cancelar
                 </button>
-                <button type="button" class="btn btn-primary">Borrar</button>
               </div>
             </div>
           </div>
@@ -287,11 +235,6 @@ export default {
                     </p>
                   </div>
 
-                  <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
-
                   <div class="modal-footer">
                     <button type="submit" id="addButton">Actualizar</button>
                     <button
@@ -299,7 +242,7 @@ export default {
                       @toggle-off="resetForm"
                       id="cancelButton"
                     >
-                      Cancelar
+                      Borrar Formulario
                     </button>
                   </div>
                 </form>

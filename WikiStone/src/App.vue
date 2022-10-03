@@ -76,7 +76,7 @@ img {
   max-width: 100%;
   display: block;
 }
-/* Natural flow and rhythm in articles by default */
+/* Natural flow and rhythm in stones by default */
 article > * + * {
   margin-top: 1em;
 }

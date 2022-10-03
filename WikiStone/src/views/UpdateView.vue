@@ -1,4 +1,6 @@
-<script setup>
+<!-- Esta vista finalmente decidí dejar un modal
+  
+  <script setup>
 import UpdateComponent from "../components/my_components/updateComponents/updateComponent.vue";
 import UpdateButton from "../components/my_components/updateComponents/updateButton.vue";
 import CancelUpdateButton from "../components/my_components/updateComponents/cancelUpdateButton.vue";
@@ -17,5 +19,5 @@ import CancelUpdateButton from "../components/my_components/updateComponents/can
 
 <style lang="css" scoped>
 
-</style>
+</style> -->
 

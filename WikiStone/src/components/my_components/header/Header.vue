@@ -1,3 +1,5 @@
+<!-- Debo poner funcionalidad a la searchBar -->
+
 <script>
 import SearchBarVue from "./SearchBar.vue";
 

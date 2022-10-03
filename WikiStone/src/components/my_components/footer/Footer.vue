@@ -1,12 +1,12 @@
-<script>
-</script>
+<script></script>
 
 <template>
   <footer class="footer">
-    <h4>Página de Inicio</h4>
+    <h4></h4>
     <button
       onclick="alert('La Biblia de los Cristales de Judy Hall');"
-      id="footerButton">
+      id="footerButton"
+    >
       Fuentes de Información
     </button>
   </footer>

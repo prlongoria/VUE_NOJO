@@ -1,3 +1,7 @@
+<!-- Debo meterle funcionalidad y css correcto para que con media query cambie a la parte superior, de
+momento, la he muteado de la vista HomeView. Aquí irá toda la info extra como limpiar piedras y otras
+curiosidades del libro -->
+
 <script>
 export default {};
 </script>

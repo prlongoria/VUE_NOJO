@@ -1,3 +1,6 @@
+<!-- 
+Esta es la vista detalle inicial que iba con el detailComponent, pero finalmente, decidí dejar un modal en lugar 
+de una vista más
 
 <script setup>
 import BackButton from "../components/my_components/detailComponents/backButton.vue";
@@ -14,4 +17,4 @@ import DetailComponent from "../components/my_components/detailComponents/detail
 
 <style lang="css" scoped>
     
-</style>
+</style> -->
