@@ -27,20 +27,12 @@ Hay mucho trabajo por delante, haré la figura de administrador y de usuario par
   "http://localhost:8080/api/v1/stone"
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
 
 #### Get stone
 
 ```http
   "http://localhost:8080/api/v1/stone/show/" + id
 ```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of stone to fetch |
-
 
 
 ## Authors
@@ -74,15 +66,7 @@ Stack:
 
 https://www.figma.com/file/OxWw8wYeHTkpRRRDo0qxI7/WIKISTONE?node-id=0%3A1
 
-## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
-
-`API_KEY`
-
-`ANOTHER_API_KEY`
-
-????
 ## Installation
 
 Install my-project with npm
