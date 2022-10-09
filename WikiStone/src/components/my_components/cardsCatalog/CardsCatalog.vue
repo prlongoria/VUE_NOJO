@@ -109,7 +109,7 @@ export default {
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Vista Detalle</h5>
                 <button
                   type="button"
                   class="btn-close"
@@ -193,7 +193,7 @@ export default {
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar Piedra</h5>
                 <button
                   type="button"
                   class="btn-close"
