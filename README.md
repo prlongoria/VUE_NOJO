@@ -1,8 +1,7 @@
 
-
 <!-- ![logo-wikipiedra](https://user-images.githubusercontent.com/104829537/193504696-6c8c547f-3e52-4da1-b98f-16ae0f543215.jpg) -->
 <!-- <img src="https://user-images.githubusercontent.com/104829537/193504696-6c8c547f-3e52-4da1-b98f-16ae0f543215.jpg " height="200" width="200"> -->
-# WIKIPIEDRA
+# WIKIPIEDRA BACK
 <div align="center"><img src="https://user-images.githubusercontent.com/104829537/193504696-6c8c547f-3e52-4da1-b98f-16ae0f543215.jpg " height="200" width="200"></div>
 
 
@@ -73,10 +72,19 @@ Install my-project with npm
 
 ```bash
     1.- Arrancar mySQL en xampp
-    2.- Arrancar el servidor del back en intelliJ
-    3.- npm run dev para arrancar el servidor del front
+    2.- Crea un bbdd llamada wikipiedra
+    3.- Importar archivo piedras.sql de wikipiedra en mysql que es la tabla de la bbdd
+    4.- En resource->application.properties-> pegar el siguiente código:
+       spring.datasource.url=jdbc:mysql://localhost:3306/wikipiedra
+       spring.datasource.username=root
+       spring.datasource.password=
+       spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQL5InnoDBDialect
+       spring.jpa.hibernate.ddl-auto= update
+    5.- Arrancar el servidor del back en intelliJ
+    6.- npm run dev para arrancar el servidor del front
 ```
     
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
