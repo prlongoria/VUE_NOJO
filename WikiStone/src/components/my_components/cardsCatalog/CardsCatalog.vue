@@ -87,10 +87,11 @@ export default {
         <p>{{ stone.attributes }}</p>
       </div>
       <div class="enlaceDetalle">
-        <button @click="deleteStone(stone.id)">🗑️</button>
+        <button id="button" @click="deleteStone(stone.id)">🗑️</button>
 
         <!-- Button trigger modal SHOW-->
         <button
+          id="button"
           type="button"
           data-bs-toggle="modal"
           :data-bs-target="'#showModal' + stone.id"
@@ -175,6 +176,7 @@ export default {
 
         <!-- Button trigger modal UPDATE-->
         <button
+          id="button"
           type="button"
           data-bs-toggle="modal"
           :data-bs-target="'#updateModal' + stone.id"
@@ -344,5 +346,11 @@ p {
   padding: 3vw;
   margin: 2vw;
   margin-bottom: 0vw;
+}
+
+#button {
+  border-color: white;
+  background-color: white;
+  color: #8E4F5D;
 }
 </style>
