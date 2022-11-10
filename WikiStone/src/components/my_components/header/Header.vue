@@ -38,10 +38,12 @@ export default {
 
 <style lang="css" scoped>
 * {
-  color: white;
+  /* color: #be2cc5; */
+  color: black;
   /* text-decoration: none; */
   font-size: 1.5vw;
   margin-top: 0vw;
+  
 }
 header > figcaption {
   width: 25vw;
@@ -58,13 +60,19 @@ header > figcaption {
 
 #WikiTitle {
   font-family: "Jacques Francois";
-  color: white;
+  /* color: #be2cc5; */
+  color: black;
   font-size: 5vw;
 }
 header {
   width: 100%;
   min-width: 200px;
-  background: #ce918d;
+  /* background: #94e7ff;  */
+  background:linear-gradient(whitesmoke, #be2cc5, white);
+  /* background: white; */
+  /* border-bottom: #be2cc5 0.15vw solid; */
+  /* border-bottom: black 0.15vw solid; */
+  /* position: sticky; */
   display: flex;
   justify-content: space-between;
   align-items: center;
